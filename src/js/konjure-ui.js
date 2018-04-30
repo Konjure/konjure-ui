@@ -16,42 +16,24 @@ $(document).ready(function() {
 		
 	});
 	
-	// Wonky sub-columns
+	// Hover effects
 	
-	$(".columns .column .column").each(function(i){
+	$(".kj *").hover(function() {
+
+		if($(this).is("[transition]")) {
+			
+			$(this).css("transition", $(this).attr("transition") + "s ease");
+			
+		}
 		
-		var scMargin = $(".cover").width() / 20;
+		if($(this).is("[hover]")) {
+			
+			if(!$(this).hasClass("disabled")) {
 		
-		if($(this).hasClass("two")) {
+				$(this).addClass($(this).attr("hover"));
 			
-			$(this).css("width", ($(this).parent().outerWidth() - scMargin) / 2);
-			
-			if(!$(this).is(":last-child")) {
-				
-				$(this).css("marginRight", scMargin);
-				
 			}
-			
-		} else if($(this).hasClass("three")) {
-			
-			$(this).css("width", ($(this).parent().outerWidth() - (scMargin * 2)) / 3);
-			
-			if(!$(this).is(":last-child")) {
-				
-				$(this).css("marginRight", scMargin);
-				
-			}
-			
-		} else if($(this).hasClass("four")) {
-			
-			$(this).css("width", ($(this).parent().outerWidth() - (scMargin * 3)) / 4);
-			
-			if(!$(this).is(":last-child")) {
-				
-				$(this).css("marginRight", scMargin);
-				
-			}
-			
+		
 		}
 		
 	});
@@ -370,28 +352,6 @@ $(document).ready(function() {
 				
 				updateArrows();
 				
-			}
-		
-		}
-		
-	});
-	
-	// Hover effects
-	
-	$(".kj *").hover(function() {
-
-		if($(this).is("[transition]")) {
-			
-			$(this).css("transition", $(this).attr("transition") + "s ease");
-			
-		}
-		
-		if($(this).is("[hover]")) {
-			
-			if(!$(this).hasClass("disabled")) {
-		
-				$(this).addClass($(this).attr("hover"));
-			
 			}
 		
 		}
