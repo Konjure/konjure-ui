@@ -536,44 +536,6 @@ $(document).ready(function() {
 		
 		positionAddons();
 		
-		$(".columns .column .column").each(function(i){
-			
-			var scMargin = $(".cover").width() / 20;
-			
-			if($(this).hasClass("two")) {
-				
-				$(this).css("width", ($(this).parent().outerWidth() - scMargin) / 2);
-				
-				if(!$(this).is(":last-child")) {
-					
-					$(this).css("marginRight", scMargin);
-					
-				}
-				
-			} else if($(this).hasClass("three")) {
-				
-				$(this).css("width", ($(this).parent().outerWidth() - (scMargin * 2)) / 3);
-				
-				if(!$(this).is(":last-child")) {
-					
-					$(this).css("marginRight", scMargin);
-					
-				}
-				
-			} else if($(this).hasClass("four")) {
-				
-				$(this).css("width", ($(this).parent().outerWidth() - (scMargin * 3)) / 4);
-				
-				if(!$(this).is(":last-child")) {
-					
-					$(this).css("marginRight", scMargin);
-					
-				}
-				
-			}
-			
-		});
-		
 	});
 	
 });
