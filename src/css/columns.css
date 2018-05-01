@@ -130,9 +130,4 @@
 
 .column img {
 	max-width: 100%;
-	margin-bottom: 20px;
-}
-
-.column img:last-child {
-	margin-bottom: 0;
 }

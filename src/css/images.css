@@ -8,6 +8,11 @@
 
 img {
 	display: block;
+	margin-bottom: 20px;
+}
+
+img:last-child {
+	margin-bottom: 0;
 }
 
 img.center {
