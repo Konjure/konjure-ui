@@ -1,0 +1,93 @@
+/*
+
+	* Copyright (c) 2018 Konjure
+	* Released under the MIT license
+	* https://opensource.org/licenses/MIT
+
+*/
+
+input,
+textarea,
+select {
+	font-size: 16px;
+	color: var(--dark-color);
+	border: none;
+	outline: 0;
+}
+
+::placeholder {
+	color: var(--neutral-color);
+	opacity: 1;
+}
+
+:-ms-input-placeholder {
+	color: var(--neutral-color);
+}
+
+::-ms-input-placeholder {
+	color: var(--neutral-color);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="week"],
+input[type="month"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="time"],
+input[type="range"],
+select,
+textarea {
+	width: 100%;
+	margin-bottom: 20px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+textarea {
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 42px;
+	max-height: 250px;
+}
+
+select {
+	height: 42px;
+}
+
+input[type="color"] {
+	height: 42px;
+	width: 42px;
+}
+
+input[type="text"]:last-child,
+input[type="email"]:last-child,
+input[type="number"]:last-child,
+input[type="tel"]:last-child,
+input[type="url"]:last-child,
+input[type="password"]:last-child,
+input[type="search"]:last-child,
+input[type="week"]:last-child,
+input[type="month"]:last-child,
+input[type="date"]:last-child,
+input[type="datetime-local"]:last-child,
+input[type="time"]:last-child,
+select:last-child {
+	margin-bottom: 0;
+}
+
+input[type="checkbox"]:hover,
+input[type="radio"]:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="range"]:hover,
+input[type="color"]:hover {
+	cursor: pointer;
+}

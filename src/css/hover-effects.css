@@ -1,0 +1,35 @@
+/*
+
+	* Copyright (c) 2018 Konjure
+	* Released under the MIT license
+	* https://opensource.org/licenses/MIT
+
+*/
+
+.brighten:hover {
+	-webkit-filter: brightness(110%);
+	-moz-filter: brightness(110%);
+	filter: brightness(110%);
+}
+
+.darken:hover {
+	-webkit-filter: brightness(90%);
+	-moz-filter: brightness(90%);
+	filter: brightness(90%);
+}
+
+.grow:hover {
+	-ms-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.shrink:hover {
+	-ms-transform: scale(0.9);
+	-webkit-transform: scale(0.9);
+	transform: scale(0.9);
+}
+
+.underline:hover {
+	text-decoration: underline;
+}

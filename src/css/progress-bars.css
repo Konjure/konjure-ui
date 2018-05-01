@@ -1,0 +1,72 @@
+/*
+
+	* Copyright (c) 2018 Konjure
+	* Released under the MIT license
+	* https://opensource.org/licenses/MIT
+
+*/
+
+.bar {
+	height: 35px;
+	width: 100%;
+	background-color: var(--light-color);
+	position: relative;
+}
+
+.bar.small {
+	height: 25px;
+}
+
+.bar.medium {
+	height: 35px;
+}
+
+.bar.large {
+	height: 45px;
+}
+
+.inner-bar {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	background-color: var(--bar-completed-color);
+	background: linear-gradient(to right, var(--bar-left-color), var(--bar-middle-color), var(--bar-right-color));
+}
+
+.hide-bar {
+	height: 100%;
+	width: 100%;
+	background-color: var(--light-color);
+	position: absolute;
+	z-index: 1;
+	right: 0;
+}
+
+@-webkit-keyframes progress-animate {
+	0% {
+		opacity: 0.3;
+		width: 0;
+	}
+	100% {
+		opacity: 0;
+		width: 100%;
+	}
+}
+
+@keyframes progress-animate {
+	0% {
+		opacity: 0.3;
+		width: 0;
+	}
+	100% {
+		opacity: 0;
+		width: 100%;
+	}
+}
+
+.animate-bar {
+	height: 100%;
+	background-color: var(--lightest-color);
+	-webkit-animation: progress-animate 3s ease infinite;
+	animation: progress-animate 3s ease infinite;
+}

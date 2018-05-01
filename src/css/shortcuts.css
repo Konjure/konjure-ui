@@ -1,0 +1,242 @@
+/*
+
+	* Copyright (c) 2018 Konjure
+	* Released under the MIT license
+	* https://opensource.org/licenses/MIT
+
+*/
+
+.no-select, .deselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.static {
+	position: static;
+}
+
+.relative {
+	position: relative;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.fixed {
+	position: fixed;
+}
+
+.top {
+	top: 0;
+}
+
+.right {
+	float: right;
+	right: 0;
+}
+
+.bottom {
+	bottom: 0;
+}
+
+.left {
+	float: left;
+	left: 0;
+}
+
+.detail, .color {
+	color: var(--detail-color);
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.indent {
+	text-indent: 50px;
+}
+
+.headline {
+	margin-bottom: 75px;
+}
+
+.text-shadow {
+	text-shadow: 0 0 5px var(--darkest-color);
+}
+
+.fit, .border-box {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.padding {
+	padding: 20px;
+}
+
+.padding-top {
+	padding-top: 20px;
+}
+
+.padding-right {
+	padding-right: 20px;
+}
+
+.padding-bottom {
+	padding-bottom: 20px;
+}
+
+.padding-left {
+	padding-left: 20px;
+}
+
+.margin {
+	margin: 20px;
+}
+
+.margin-top {
+	margin-top: 20px;
+}
+
+.margin-right {
+	margin-right: 20px;
+}
+
+.margin-bottom {
+	margin-bottom: 20px;
+}
+
+.margin-left {
+	margin-left: 20px;
+}
+
+.background, .background-color {
+	background-color: var(--lighter-color);
+}
+
+.background-image {
+	background: url("../../images/placeholder-background.jpg") no-repeat center center; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.shadow {
+	-webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
+	-moz-box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
+	box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
+}
+
+.border {
+	border: 2px solid var(--neutral-color);
+}
+
+.border-top {
+	border-top: 2px solid var(--neutral-color);
+}
+
+.border-right {
+	border-right: 2px solid var(--neutral-color);
+}
+
+.border-bottom {
+	border-bottom: 2px solid var(--neutral-color);
+}
+
+.border-left {
+	border-left: 2px solid var(--neutral-color);
+}
+
+.circle {
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.slight-rounded {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.rounded {
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.hide {
+	display: none;
+}
+
+.blur {
+	-webkit-filter: blur(4px);
+	filter: blur(4px);
+}
+
+.brightness, .brighten {
+	-webkit-filter: brightness(110%);
+	filter: brightness(110%);
+}
+
+.darken {
+	-webkit-filter: brightness(90%);
+	filter: brightness(90%);
+}
+
+.contrast {
+	-webkit-filter: contrast(110%);
+	filter: contrast(110%);
+}
+
+.grayscale {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+.hue-rotate {
+	-webkit-filter: hue-rotate(180deg);
+	filter: hue-rotate(180deg);
+}
+
+.negative {
+	-webkit-filter: invert(100%);
+	filter: invert(100%);
+}
+
+.opacity {
+	-webkit-filter: opacity(75%);
+	filter: opacity(75%);
+}
+
+.saturate {
+	-webkit-filter: saturate(90%);
+	filter: saturate(90%);
+}
+
+.sepia {
+	-webkit-filter: sepia(100%);
+	filter: sepia(100%);
+}
+
+.drop-shadow {
+	-webkit-filter: drop-shadow(8px 8px 10px rgba(0,0,0,0.75));
+	filter: drop-shadow(8px 8px 10px rgba(0,0,0,0.75));
+}

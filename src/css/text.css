@@ -1,0 +1,75 @@
+/*
+
+	* Copyright (c) 2018 Konjure
+	* Released under the MIT license
+	* https://opensource.org/licenses/MIT
+
+*/
+
+p.title {
+	color: var(--darker-color);
+	font-weight: bold;
+	margin-bottom: 5px;
+	letter-spacing: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+	line-height: 1.25;
+	color: var(--darker-color);
+}
+
+h1 {
+	font-size: 50px;
+}
+
+h2 {
+	font-size: 45px;
+}
+
+h3 {
+	font-size: 40px;
+}
+
+h4 {
+	font-size: 35px;
+}
+
+h5 {
+	font-size: 30px;
+}
+
+h6 {
+	font-size: 25px;
+}
+
+p,
+ul,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	margin-bottom: 5px;
+}
+
+p:last-child,
+ul:last-child,
+ol:last-child,
+h1:last-child,
+h2:last-child
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child {
+	margin-bottom: 0;
+}

@@ -1,0 +1,113 @@
+/*
+
+	* Copyright (c) 2018 Konjure
+	* Released under the MIT license
+	* https://opensource.org/licenses/MIT
+
+*/
+
+.popup {
+	height: 75%;
+	position: fixed;
+	z-index: 10;
+	left: 50%;
+	-ms-transform: translate(-50%, 0);
+	-webkit-transform: translate(-50%, 0);
+	transform: translate(-50%, 0);
+	top: 12.5%;
+	overflow: hidden;
+}
+
+body.dim {
+	position: fixed;
+	overflow-y: scroll;
+}
+
+body.dim > *:not(.popup) {
+	-webkit-filter: brightness(30%);
+	-moz-filter: brightness(30%);
+	filter: brightness(30%);
+	pointer-events: none;
+}
+
+.pop:hover {
+	cursor: pointer;
+	-webkit-filter: brightness(105%);
+	-moz-filter: brightness(105%);
+	filter: brightness(105%);
+}
+
+body.dim .pop:hover {
+	-webkit-filter: brightness(100%);
+	-moz-filter: brightness(100%);
+	filter: brightness(100%);
+}
+
+.pop.open {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.pop.open:hover {
+	cursor: auto;
+	-webkit-filter: brightness(100%);
+	-moz-filter: brightness(100%);
+	filter: brightness(100%);
+}
+
+.caption {
+	width: 100%;
+	position: absolute;
+	display: inline-block;
+	background-color: rgba(0,0,0,0.5);
+	color: var(--lightest-color);
+	text-align: center;
+	padding: 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.x-out {
+	font-size: 25px;
+	color: var(--lightest-color);
+	position: absolute;
+	top: 10px;
+	right: 13px;
+	text-shadow: 0 0 3px #000;
+	opacity: 0.75;
+	z-index: 1;
+}
+
+.x-out:hover {
+	cursor: pointer;
+	opacity: 0.9;
+}
+
+.arrow-left {
+	font-size: 30px;
+	color: var(--lightest-color);
+	position: absolute;
+	left: 13px;
+	opacity: 0.75;
+	z-index: 1;
+}
+
+.arrow-right {
+	font-size: 30px;
+	color: var(--lightest-color);
+	position: absolute;
+	right: 13px;
+	opacity: 0.75;
+	z-index: 1;
+}
+
+.arrow-left.hover,
+.arrow-right.hover {
+	margin-top: 0;
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+	cursor: pointer;
+}

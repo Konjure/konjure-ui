@@ -1,0 +1,16 @@
+/*
+
+	* Copyright (c) 2018 Konjure
+	* Released under the MIT license
+	* https://opensource.org/licenses/MIT
+
+*/
+
+a {
+	color: var(--detail-color);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}

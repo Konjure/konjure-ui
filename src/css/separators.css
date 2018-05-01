@@ -1,0 +1,35 @@
+/*
+
+	* Copyright (c) 2018 Konjure
+	* Released under the MIT license
+	* https://opensource.org/licenses/MIT
+
+*/
+
+.divider {
+	background-color: var(--neutral-color);
+}
+
+.divider,
+.divider.horizontal {
+	height: 1px;
+	width: 100%;
+	margin: 20px 0 20px 0;
+}
+
+.divider:first-child,
+.divider:last-child {
+	margin-top: 0;
+}
+
+.divider p {
+	display: inline-block;
+	background-color: var(--lightest-color);
+}
+
+.divider.horizontal p {
+	position: relative;
+	bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+}

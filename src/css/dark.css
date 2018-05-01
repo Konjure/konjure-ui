@@ -1,0 +1,36 @@
+/*
+
+	* Copyright (c) 2018 Konjure
+	* Released under the MIT license
+	* https://opensource.org/licenses/MIT
+
+*/
+
+.dark {
+	background-color: var(--darkest-color);
+	color: var(--light-color);
+}
+
+.dark p {
+	color: var(--light-color);
+}
+
+.dark p.title,
+.dark ul,
+.dark ol,
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+	color: var(--lighter-color);
+}
+
+.dark .divider {
+	background-color: var(--light-color);
+}
+
+.dark .background {
+	background-color: var(--darker-color);
+}
