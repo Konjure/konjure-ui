@@ -19,11 +19,3 @@ body {
 	margin: 0;
 	padding: 0;
 }
-
-::selection {
-	background: var(--lighter-color);
-}
-
-::-moz-selection {
-	background: var(--lighter-color);
-}

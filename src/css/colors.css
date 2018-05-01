@@ -30,3 +30,11 @@
 	--bar-completed-color: #99D16F;
 	
 }
+
+::selection {
+	background: var(--lighter-color);
+}
+
+::-moz-selection {
+	background: var(--lighter-color);
+}
