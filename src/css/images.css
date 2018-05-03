@@ -32,3 +32,29 @@ img.stretch {
 	height: 100%;
 	width: 100%;
 }
+
+img.contain {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+img.fill-portrait {
+	height: 100%;
+	margin-left: 50%;
+	-ms-transform: translate(0, -50%);
+	-webkit-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+}
+
+img.fill-landscape {
+	width: 100%;
+	margin-top: 50%;
+	-ms-transform: translate(-50%);
+	-webkit-transform: translate(-50%);
+	transform: translate(-50%);
+}
+
+img.fill-minimum {
+	min-height: 100%;
+	min-width: 100%;
+}
