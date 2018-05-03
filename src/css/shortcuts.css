@@ -49,34 +49,6 @@
 	left: 0;
 }
 
-.detail, .color {
-	color: var(--detail-color);
-}
-
-.text-left {
-	text-align: left;
-}
-
-.text-center {
-	text-align: center;
-}
-
-.text-right {
-	text-align: right;
-}
-
-.indent {
-	text-indent: 50px;
-}
-
-.headline {
-	margin-bottom: 75px;
-}
-
-.text-shadow {
-	text-shadow: 0 0 5px var(--darkest-color);
-}
-
 .fit, .border-box {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;

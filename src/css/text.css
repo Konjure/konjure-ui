@@ -6,11 +6,30 @@
 
 */
 
-p.title {
-	color: var(--darker-color);
-	font-weight: bold;
-	margin-bottom: 5px;
-	letter-spacing: 0.5px;
+p,
+ul,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	margin-bottom: 10px;
+}
+
+p:last-child,
+ul:last-child,
+ol:last-child,
+h1:last-child,
+h2:last-child
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child {
+	margin-bottom: 0;
 }
 
 h1,
@@ -48,28 +67,37 @@ h6 {
 	font-size: 25px;
 }
 
-p,
-ul,
-ol,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	-webkit-margin-before: 0;
-	-webkit-margin-after: 0;
-	margin-bottom: 5px;
+.title {
+	color: var(--darker-color);
+	font-weight: bold;
+	margin-bottom: 10px;
+	letter-spacing: 0.5px;
 }
 
-p:last-child,
-ul:last-child,
-ol:last-child,
-h1:last-child,
-h2:last-child
-h3:last-child,
-h4:last-child,
-h5:last-child,
-h6:last-child {
-	margin-bottom: 0;
+.detail, .color {
+	color: var(--detail-color);
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.indent {
+	text-indent: 50px;
+}
+
+.headline {
+	margin-bottom: 75px;
+}
+
+.text-shadow {
+	text-shadow: 0 0 5px var(--darkest-color);
 }
