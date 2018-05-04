@@ -7,9 +7,9 @@
 */
 
 :root {
-
-/* Color Scheme */
-
+	
+	/* UI Defaults */
+	
 	--lightest-color: #FFF;
 	--lighter-color: #DDD;
 	--light-color: #BBB;
@@ -17,17 +17,19 @@
 	--dark-color: #999;
 	--darker-color: #777;
 	--darkest-color: #555;
-	--detail-color: #80C039;
-	--detail-color-dark: #6EA13E;
-
-/* Progress Bars */
-
-	--bar-left-color: #E95864;
-	--bar-middle-color: #FACC60;
-	--bar-right-color: #99D16F;
-	--bar-error-color: #E95864;
-	--bar-warning-color: #FACC60;
-	--bar-completed-color: #99D16F;
+	--detail-color: #7EC31C;
+	
+	/* Color Palette */
+	
+	--white: #FFF;
+	--gray: #7F7F7F;
+	--black: #000;
+	--red: #FC5C65;
+	--orange: #FD9644;
+	--yellow: #FED330;
+	--green: #26DE81;
+	--blue: #4B7BEC;
+	--purple: #A55EEA;
 	
 }
 
