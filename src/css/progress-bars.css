@@ -29,8 +29,8 @@
 	height: 100%;
 	width: 100%;
 	position: relative;
-	background-color: var(--bar-completed-color);
-	background: linear-gradient(to right, var(--bar-left-color), var(--bar-middle-color), var(--bar-right-color));
+	background-color: var(--green);
+	background: linear-gradient(to right, var(--red), var(--yellow), var(--green));
 }
 
 .hide-bar {
