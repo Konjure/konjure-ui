@@ -33,6 +33,7 @@
 	
 	/* Grid */
 	
-	--gutter: 4%;
+	--grid-margin: 2%;
+	--grid-padding: 15px;
 	
 }
