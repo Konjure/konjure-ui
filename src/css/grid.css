@@ -32,7 +32,6 @@
 .grid [class*="box"] {
 	padding: var(--grid-padding);
 	margin-right: var(--grid-margin);
-	margin-bottom: var(--grid-margin);
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
