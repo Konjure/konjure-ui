@@ -1,0 +1,38 @@
+/*
+
+	* Copyright (c) 2018 Konjure
+	* Released under the MIT license
+	* https://opensource.org/licenses/MIT
+
+*/
+
+:root {
+	
+	/* Default Color Scheme */
+	
+	--lightest-color: #FFF;
+	--lighter-color: #DDD;
+	--light-color: #BBB;
+	--neutral-color: #A0A0A0;
+	--dark-color: #999;
+	--darker-color: #777;
+	--darkest-color: #555;
+	--detail-color: #7EC31C;
+	
+	/* Color Palette */
+	
+	--white: #FFF;
+	--gray: #7F7F7F;
+	--black: #000;
+	--red: #FC5C65;
+	--orange: #FD9644;
+	--yellow: #FED330;
+	--green: #26DE81;
+	--blue: #4B7BEC;
+	--purple: #A55EEA;
+	
+	/* Grid */
+	
+	--gutter: 4%;
+	
+}
