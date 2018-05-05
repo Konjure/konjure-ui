@@ -6,22 +6,26 @@
 
 */
 
-$("*").hover(function() {
+$(document).ready(function() {
 
-	if($(this).is("[transition]")) {
+	$("*").hover(function() {
+
+		if($(this).is("[transition]")) {
+			
+			$(this).css("transition", $(this).attr("transition") + "s ease");
+			
+		}
 		
-		$(this).css("transition", $(this).attr("transition") + "s ease");
+		if($(this).is("[hover]")) {
+			
+			if(!$(this).hasClass("disabled")) {
 		
-	}
-	
-	if($(this).is("[hover]")) {
-		
-		if(!$(this).hasClass("disabled")) {
-	
-			$(this).addClass($(this).attr("hover"));
+				$(this).addClass($(this).attr("hover"));
+			
+			}
 		
 		}
-	
-	}
-	
+		
+	});
+
 });

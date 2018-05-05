@@ -6,97 +6,101 @@
 
 */
 
-$(".inner-bar").each(function(i) {
-	
-	var $hideBar = $("<div>", {"class": "hide-bar"});
-	var $animateBar = $("<div>", {"class": "animate-bar"});
-	var $innerBarLabel = $("<div>", {"class": "inner-bar-label"});
-	var transitionTicks = $(this).attr("transition") * 1000;
+$(document).ready(function() {
 
-	if($(this).is("[progress]")) {
+	$(".inner-bar").each(function(i) {
 		
-		if($(this).is("[transition]")) {
+		var $hideBar = $("<div>", {"class": "hide-bar"});
+		var $animateBar = $("<div>", {"class": "animate-bar"});
+		var $innerBarLabel = $("<div>", {"class": "inner-bar-label"});
+		var transitionTicks = $(this).attr("transition") * 1000;
+
+		if($(this).is("[progress]")) {
 			
-			$(this).append($hideBar);
-			var progress = $(this).attr("progress");
-			$(this).css("transition", $(this).attr("transition") + "s ease");
-			
-			$(this).children(".hide-bar").animate({"width":100 - progress + "%"}, transitionTicks, function() {
+			if($(this).is("[transition]")) {
 				
-				if($(this).parent().hasClass("error")) {
+				$(this).append($hideBar);
+				var progress = $(this).attr("progress");
+				$(this).css("transition", $(this).attr("transition") + "s ease");
+				
+				$(this).children(".hide-bar").animate({"width":100 - progress + "%"}, transitionTicks, function() {
 					
-					$(this).parent().parent().css("background-color", "var(--bar-error-color)");
-					$(this).parent().animate({"opacity":"0.0"}, transitionTicks / 4);
+					if($(this).parent().hasClass("error")) {
+						
+						$(this).parent().parent().css("background-color", "var(--bar-error-color)");
+						$(this).parent().animate({"opacity":"0.0"}, transitionTicks / 4);
+						
+					} else if($(this).parent().hasClass("warning")) {
+						
+						$(this).parent().parent().css("background-color", "var(--bar-warning-color)");
+						$(this).parent().animate({"opacity":"0.0"}, transitionTicks / 4);
+						
+					} else {
+						
+						if(progress === "100" || $(this).parent().hasClass("success")) {
+
+							$(this).parent().parent().css("background-color", "var(--bar-completed-color)");
+							$(this).parent().animate({"opacity":"0.0"}, transitionTicks / 4);
+							
+						}
+						
+					}
 					
-				} else if($(this).parent().hasClass("warning")) {
+				});
+				
+			} else {
+				
+				$(this).append($hideBar);
+				var progress = $(this).attr("progress");
+				$(this).children(".hide-bar").css("width", 100 - progress + "%");
+				
+				if($(this).hasClass("error")) {
 					
-					$(this).parent().parent().css("background-color", "var(--bar-warning-color)");
-					$(this).parent().animate({"opacity":"0.0"}, transitionTicks / 4);
+					$(this).parent().css("background-color", "var(--bar-error-color)");
+					$(this).css("opacity", "0.0");
+					
+				} else if($(this).hasClass("warning")) {
+					
+					$(this).parent().css("background-color", "var(--bar-warning-color)");
+					$(this).css("opacity", "0.0");
 					
 				} else {
 					
-					if(progress === "100" || $(this).parent().hasClass("success")) {
-
-						$(this).parent().parent().css("background-color", "var(--bar-completed-color)");
-						$(this).parent().animate({"opacity":"0.0"}, transitionTicks / 4);
+					if(progress === "100" || $(this).hasClass("success")) {
+						
+						$(this).parent().css("background-color", "var(--bar-completed-color)");
+						$(this).css("opacity", "0.0");
 						
 					}
 					
 				}
 				
-			});
+			}
 			
-		} else {
+			if($(this).is("[animate]")) {
+
+				$(this).append($animateBar);
 			
-			$(this).append($hideBar);
-			var progress = $(this).attr("progress");
-			$(this).children(".hide-bar").css("width", 100 - progress + "%");
+			}
 			
-			if($(this).hasClass("error")) {
+			/*
+			
+			if($(this).is("[label='percentage']")) {
+
+				$(this).children(".hide-bar").append($innerBarLabel);
+				$(this).find(".inner-bar-label").text(progress + "%");
+				$(this).find(".inner-bar-label").css("opacity", "1.0");
+			
+			} else if($(this).is("[label='status']")) {
 				
-				$(this).parent().css("background-color", "var(--bar-error-color)");
-				$(this).css("opacity", "0.0");
-				
-			} else if($(this).hasClass("warning")) {
-				
-				$(this).parent().css("background-color", "var(--bar-warning-color)");
-				$(this).css("opacity", "0.0");
-				
-			} else {
-				
-				if(progress === "100" || $(this).hasClass("success")) {
-					
-					$(this).parent().css("background-color", "var(--bar-completed-color)");
-					$(this).css("opacity", "0.0");
-					
-				}
+				// Status alternative
 				
 			}
 			
-		}
+			*/
 		
-		if($(this).is("[animate]")) {
+		}
 
-			$(this).append($animateBar);
-		
-		}
-		
-		/*
-		
-		if($(this).is("[label='percentage']")) {
-
-			$(this).children(".hide-bar").append($innerBarLabel);
-			$(this).find(".inner-bar-label").text(progress + "%");
-			$(this).find(".inner-bar-label").css("opacity", "1.0");
-		
-		} else if($(this).is("[label='status']")) {
-			
-			// Status alternative
-			
-		}
-		
-		*/
-	
-	}
+	});
 
 });

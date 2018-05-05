@@ -6,34 +6,38 @@
 
 */
 
-window.isChanged = false;
+$(document).ready(function() {
 
-$(".expander").click(function() {
-	
-	$(this).toggleClass("expanded");
-	
-	// Icon changing
+	window.isChanged = false;
 
-	if($(this).is("[change-icon]")) {
+	$(".expander").click(function() {
 		
-		window.newIcon = $(this).attr("change-icon");
+		$(this).toggleClass("expanded");
 		
-		if(window.isChanged === false) {
+		// Icon changing
+
+		if($(this).is("[change-icon]")) {
 			
-			window.currentIcon = $(this).find("i").attr("class").split(" ")[1];
-		
-			$(this).find("i").removeClass(window.currentIcon);
-			$(this).find("i").addClass(window.newIcon);
-			window.isChanged = true;
+			window.newIcon = $(this).attr("change-icon");
 			
-		} else {
+			if(window.isChanged === false) {
+				
+				window.currentIcon = $(this).find("i").attr("class").split(" ")[1];
 			
-			$(this).find("i").removeClass(window.newIcon);
-			$(this).find("i").addClass(window.currentIcon);
-			window.isChanged = false;
+				$(this).find("i").removeClass(window.currentIcon);
+				$(this).find("i").addClass(window.newIcon);
+				window.isChanged = true;
+				
+			} else {
+				
+				$(this).find("i").removeClass(window.newIcon);
+				$(this).find("i").addClass(window.currentIcon);
+				window.isChanged = false;
+				
+			}
 			
 		}
 		
-	}
-	
+	});
+
 });

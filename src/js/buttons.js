@@ -6,26 +6,30 @@
 
 */
 
-var materialInk, d, x, y;
+$(document).ready(function() {
 
-$(".button.material").click(function(e){
-	
-	if($(this).find(".materialInk").length == 0)
-		
-		$(this).prepend("<span class='materialInk'></span>");
-		materialInk = $(this).find(".materialInk");
-		materialInk.removeClass("animate");
+	var materialInk, d, x, y;
 
-	if(!materialInk.height() && !materialInk.width()) {
+	$(".button.material").click(function(e){
 		
-		d = Math.max($(this).outerWidth(), $(this).outerHeight());
-		materialInk.css({height: d, width: d});
-		
-	}
+		if($(this).find(".materialInk").length == 0)
+			
+			$(this).prepend("<span class='materialInk'></span>");
+			materialInk = $(this).find(".materialInk");
+			materialInk.removeClass("animate");
 
-	x = e.pageX - $(this).offset().left - materialInk.width() / 2;
-	y = e.pageY - $(this).offset().top - materialInk.height() / 2;
-	
-	materialInk.css({top: y+'px', left: x+'px'}).addClass("animate");
-	
+		if(!materialInk.height() && !materialInk.width()) {
+			
+			d = Math.max($(this).outerWidth(), $(this).outerHeight());
+			materialInk.css({height: d, width: d});
+			
+		}
+
+		x = e.pageX - $(this).offset().left - materialInk.width() / 2;
+		y = e.pageY - $(this).offset().top - materialInk.height() / 2;
+		
+		materialInk.css({top: y+'px', left: x+'px'}).addClass("animate");
+		
+	});
+
 });
