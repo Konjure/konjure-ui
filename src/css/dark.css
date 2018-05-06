@@ -31,6 +31,6 @@
 	background-color: var(--light-color);
 }
 
-.dark .background {
+.dark .background, .dark .background-color {
 	background-color: var(--darker-color);
 }
