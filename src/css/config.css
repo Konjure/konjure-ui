@@ -31,6 +31,11 @@
 	--blue: #4B7BEC;
 	--purple: #A55EEA;
 	
+	/* Building Blocks */
+	
+	--section-padding: 100px;
+	--cover-width: 1200px;
+	
 	/* Grid */
 	
 	--grid-margin: 2%;

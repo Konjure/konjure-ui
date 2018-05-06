@@ -12,15 +12,15 @@
 	position: relative;
 	display: inline-block;
 	vertical-align: top;
-	padding-top: 100px;
-	padding-bottom: 100px;
+	padding-top: var(--section-padding);
+	padding-bottom: var(--section-padding);
 	-webkit-box-shadow: inset 0 -4px 0 -2px rgba(0,0,0,0.15);
 	-moz-box-shadow: inset 0 -4px 0 -2px rgba(0,0,0,0.15);
 	box-shadow: inset 0 -4px 0 -2px rgba(0,0,0,0.15);
 }
 
 .cover {
-	width: 1200px;
+	width: var(--cover-width);
 	position: relative;
 	margin: auto;
 }
