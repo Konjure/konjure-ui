@@ -9,7 +9,7 @@
 input,
 textarea,
 select {
-	font-size: 16px;
+	font-size: var(--default-font-size);
 	color: var(--dark-color);
 	border: none;
 	outline: 0;
@@ -44,7 +44,7 @@ input[type="range"],
 select,
 textarea {
 	width: 100%;
-	margin-bottom: 20px;
+	margin-bottom: var(--content-margin);
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;

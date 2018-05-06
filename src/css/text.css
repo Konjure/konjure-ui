@@ -7,7 +7,7 @@
 */
 
 body {
-	font-size: 16px;
+	font-size: var(--default-font-size);
 	color: var(--dark-color);
 }
 
@@ -22,7 +22,7 @@ h5,
 h6 {
 	-webkit-margin-before: 0;
 	-webkit-margin-after: 0;
-	margin-bottom: 10px;
+	margin-bottom: var(--content-margin);
 }
 
 p:last-child,
@@ -43,39 +43,38 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: normal;
 	line-height: 1.25;
 	color: var(--darker-color);
 }
 
 h1 {
-	font-size: 32px;
+	font-size: var(--h1-size);
 }
 
 h2 {
-	font-size: 24px;
+	font-size: var(--h2-size);
 }
 
 h3 {
-	font-size: 19px;
+	font-size: var(--h3-size);
 }
 
 h4 {
-	font-size: 16px;
+	font-size: var(--h4-size);
 }
 
 h5 {
-	font-size: 14px;
+	font-size: var(--h5-size);
 }
 
 h6 {
-	font-size: 13px;
+	font-size: var(--h6-size);
 }
 
 .title {
 	color: var(--darker-color);
 	font-weight: bold;
-	margin-bottom: 10px;
+	margin-bottom: var(--content-margin);
 	letter-spacing: 0.5px;
 }
 
