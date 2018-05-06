@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -15,14 +16,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
 @SuppressWarnings("serial")
 public class CompilerUI extends JFrame implements ActionListener {
 	
 	/* Initialize components */
 	JPanel mainPanel, logoPanel, txtPanel, lblPanel, btnPanel, legalPanel;
-	JTextField verTXT, cssTXT, jsTXT;
-	JLabel legalLBL, verLBL, cssLBL, jsLBL, errorLBL, logoLBL;
+	JTextField verTxt, cssTxt, jsTxt;
+	JLabel legalLbl, verLbl, cssLbl, jsLbl, errorLbl, logoLbl;
 	JButton compileBtn;
 	JFrame frame;
 	
@@ -73,7 +75,7 @@ public class CompilerUI extends JFrame implements ActionListener {
         URL url = null;
         Image logo = null;
 		try {
-			url = new URL("https://i.imgur.com/L1d6kIY.png");
+			url = new URL("https://i.imgur.com/kIWSQSL.png");
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -86,34 +88,55 @@ public class CompilerUI extends JFrame implements ActionListener {
     	JLabel picLabel = new JLabel(new ImageIcon(logo));
     	logoPanel.add(picLabel);
         
-    	verTXT = new JTextField(15);
-    	txtPanel.add(verTXT);
+    	verTxt = new JTextField(15);
+    	verTxt.setBorder(BorderFactory.createEmptyBorder());
+    	txtPanel.add(verTxt);
     	
-    	cssTXT = new JTextField(15);
-    	txtPanel.add(cssTXT);
+    	cssTxt = new JTextField(15);
+    	cssTxt.setBorder(BorderFactory.createEmptyBorder());
+    	txtPanel.add(cssTxt);
     	
-    	jsTXT = new JTextField(15);
-    	txtPanel.add(jsTXT);
+    	jsTxt = new JTextField(15);
+    	jsTxt.setBorder(BorderFactory.createEmptyBorder());
+    	txtPanel.add(jsTxt);
     	
-        verLBL = new JLabel("Version No.");
-        verLBL.setAlignmentX(100);
-        lblPanel.add(verLBL);
+        verLbl = new JLabel("Version No.");
+        verLbl.setFont(new Font("Helvetica", Font.BOLD, 12));
+        verLbl.setForeground(Color.WHITE);
+        lblPanel.add(verLbl);
         
-        cssLBL = new JLabel("CSS Directory");
-        cssLBL.setBorder(new EmptyBorder(0,100,0,0));
-        lblPanel.add(cssLBL);
+        cssLbl = new JLabel("CSS Directory");
+        cssLbl.setFont(new Font("Helvetica", Font.BOLD, 12));
+        cssLbl.setForeground(Color.WHITE);
+        cssLbl.setBorder(new EmptyBorder(0,100,0,0));
+        lblPanel.add(cssLbl);
         
-        jsLBL = new JLabel("JS Directory");
-        jsLBL.setBorder(new EmptyBorder(0,100,0,0));
-        lblPanel.add(jsLBL);
+        jsLbl = new JLabel("JS Directory");
+        jsLbl.setFont(new Font("Helvetica", Font.BOLD, 12));
+        jsLbl.setForeground(Color.WHITE);
+        jsLbl.setBorder(new EmptyBorder(0,100,0,0));
+        lblPanel.add(jsLbl);
         
         compileBtn = new JButton("Compile");
-        compileBtn.setAlignmentX(100);
+        compileBtn.setForeground(new Color(30, 27, 29));
+        compileBtn.setBackground(new Color(127, 195, 30));
+        compileBtn.setBorder(new LineBorder(Color.BLACK));
+        Dimension d = new Dimension(170,35);
+        compileBtn.setPreferredSize(d);
         compileBtn.addActionListener(this);
         btnPanel.add(compileBtn);
         
-        legalLBL = new JLabel("Copyright \u00a9 2018 Konjure, all rights reserved.");
-        legalPanel.add(legalLBL);
+        legalLbl = new JLabel("Copyright \u00a9 2018 Konjure, all rights reserved.");
+        legalLbl.setFont(new Font("Helvetica", Font.BOLD, 12));
+        legalLbl.setForeground(Color.GRAY);
+        legalPanel.add(legalLbl);
+        
+        
+        logoPanel.setOpaque(false);
+        txtPanel.setOpaque(false);
+        lblPanel.setOpaque(false);
+        btnPanel.setOpaque(false);
+        legalPanel.setOpaque(false);
         
         
         mainPanel.add(logoPanel);
@@ -121,17 +144,19 @@ public class CompilerUI extends JFrame implements ActionListener {
         mainPanel.add(lblPanel);
         mainPanel.add(btnPanel);
         mainPanel.add(legalPanel);
-        frame.getContentPane().add(mainPanel);
+           
+        mainPanel.setBackground(new Color(30, 27, 29));
+        frame.setContentPane(mainPanel);
     }
     
-    /* Invoke Function */
+    /* Invoke function */
     public static void main(String[] args) {
 
         EventQueue.invokeLater(() -> 
         {
             CompilerUI ui = new CompilerUI();
-            
         });
+        
 
     }
 
@@ -141,7 +166,6 @@ public class CompilerUI extends JFrame implements ActionListener {
 		/* TODO: Add action on Compile. */
 		
 	}
-	
 }
 
 
