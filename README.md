@@ -2,6 +2,6 @@
 
 ![Konjure Logo](https://i.imgur.com/0HBySwy.png)
 
-The open-source backbone of Konjure. A clean, simple, and effective user interface kit.
+The open-source backbone of Konjure. A clean, simple, and effective user interface framework.
 
-Website: [konju.re](https://konju.re)
+Website: [konjure.org/ui](https://konjure.org/ui)
