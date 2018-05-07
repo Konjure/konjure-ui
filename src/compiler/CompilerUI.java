@@ -3,9 +3,11 @@ package compiler.konjure.org;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -13,6 +15,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -164,7 +167,38 @@ public class CompilerUI extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		
 		/* TODO: Add action on Compile. */
+		if(e.getSource()==compileBtn)
+		{
+			/* TODO: Add conditions for compile button */
+			try {
+				compileCSS(cssTxt);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
 		
+	}
+	
+	public void compileCSS(JTextField directoryLbl) throws IOException {
+		
+		/* Beginning of CSS Text File development */
+		String directory = directoryLbl.getText();
+		String newFile = directory + "\\testFile.css";
+		JOptionPane.showMessageDialog(null, directory);
+		JOptionPane.showMessageDialog(null, newFile);
+		
+		String begText = "/*" + System.lineSeparator() + 
+				"\t* Konjure UI CSS Library v0.1" + System.lineSeparator() +
+				"\t* https://konjure.org/ui" +  System.lineSeparator() +  System.lineSeparator() +
+				"\t* Copyright (c) 2018 Konjure and other contributors" + System.lineSeparator() +
+				"\t* Released under the MIT license" + System.lineSeparator() +
+				"\t* https://opensource.org/licenses/MIT" + System.lineSeparator() + System.lineSeparator() +
+				"*/t";
+		
+		FileOutputStream out = new FileOutputStream(newFile);
+		out.write(begText.getBytes());
+		out.close();
 	}
 }
 
