@@ -1,14 +1,61 @@
 /*
 
-	* Copyright (c) 2018 Konjure
+	* Konjure UI JS Library v0.1
+	* https://konjure.org/ui
+	
+	* Includes jQuery
+	* https://jquery.com
+
+	* Copyright (c) 2018 Konjure and other contributors
 	* Released under the MIT license
 	* https://opensource.org/licenses/MIT
 
 */
 
 $(document).ready(function() {
+
+	/*
+
+		{ Include jQuery }
+		
+	*/
+
+	var script = document.createElement("script");
+	script.src = "http://code.jquery.com/jquery-3.3.1.js";
+	script.type = "text/javascript";
+	document.getElementsByTagName('head')[0].appendChild(script);
 	
-	// Prevent image dragging
+	/*
+
+		{ Attributes }
+		
+	*/
+	
+	$("*").hover(function() {
+
+		if($(this).is("[transition]")) {
+			
+			$(this).css("transition", $(this).attr("transition") + "s ease");
+			
+		}
+		
+		if($(this).is("[hover]")) {
+			
+			if(!$(this).hasClass("disabled")) {
+		
+				$(this).addClass($(this).attr("hover"));
+			
+			}
+		
+		}
+		
+	});
+	
+	/*
+
+		{ Image Dragging }
+		
+	*/
 	
 	$("img").on("dragstart", function(event) {
 		
@@ -16,39 +63,86 @@ $(document).ready(function() {
 		
 	});
 	
-	// Wonky sub-columns
+	/*
+
+		{ Advertisements }
+		
+	*/
 	
-	$(".columns .column .column").each(function(i){
+	$(".advertisement").each(function(i){
 		
-		var scMargin = $(".cover").width() / 20;
+		if($(this).is("[size]")) {
+			
+			var width = $(this).attr("size").split("x")[0];
+			var height = $(this).attr("size").split("x")[1];
+			$(this).css("width", width + "px");
+			$(this).css("height", height + "px");
 		
-		if($(this).hasClass("two")) {
+		}
+		
+	});
+	
+	/*
+
+		{ Buttons }
+		
+	*/
+	
+	var materialInk, d, x, y;
+
+	$(".button.material").click(function(e){
+		
+		if($(this).find(".materialInk").length == 0)
 			
-			$(this).css("width", ($(this).parent().outerWidth() - scMargin) / 2);
+			$(this).prepend("<span class='materialInk'></span>");
+			materialInk = $(this).find(".materialInk");
+			materialInk.removeClass("animate");
+
+		if(!materialInk.height() && !materialInk.width()) {
 			
-			if(!$(this).is(":last-child")) {
+			d = Math.max($(this).outerWidth(), $(this).outerHeight());
+			materialInk.css({height: d, width: d});
+			
+		}
+
+		x = e.pageX - $(this).offset().left - materialInk.width() / 2;
+		y = e.pageY - $(this).offset().top - materialInk.height() / 2;
+		
+		materialInk.css({top: y+'px', left: x+'px'}).addClass("animate");
+		
+	});
+	
+	/*
+
+		{ Expanders }
+		
+	*/
+	
+	window.isChanged = false;
+
+	$(".expander").click(function() {
+		
+		$(this).toggleClass("expanded");
+		
+		// Icon changing
+
+		if($(this).is("[change-icon]")) {
+			
+			window.newIcon = $(this).attr("change-icon");
+			
+			if(window.isChanged === false) {
 				
-				$(this).css("marginRight", scMargin);
+				window.currentIcon = $(this).find("i").attr("class").split(" ")[1];
+			
+				$(this).find("i").removeClass(window.currentIcon);
+				$(this).find("i").addClass(window.newIcon);
+				window.isChanged = true;
 				
-			}
-			
-		} else if($(this).hasClass("three")) {
-			
-			$(this).css("width", ($(this).parent().outerWidth() - (scMargin * 2)) / 3);
-			
-			if(!$(this).is(":last-child")) {
+			} else {
 				
-				$(this).css("marginRight", scMargin);
-				
-			}
-			
-		} else if($(this).hasClass("four")) {
-			
-			$(this).css("width", ($(this).parent().outerWidth() - (scMargin * 3)) / 4);
-			
-			if(!$(this).is(":last-child")) {
-				
-				$(this).css("marginRight", scMargin);
+				$(this).find("i").removeClass(window.newIcon);
+				$(this).find("i").addClass(window.currentIcon);
+				window.isChanged = false;
 				
 			}
 			
@@ -56,15 +150,21 @@ $(document).ready(function() {
 		
 	});
 	
-	// Image popup
+	/*
+
+		{ Gallery }
+		
+	*/
 	
+	// Image popup
+
 	window.popped = false;
 	window.effect = "none";
 	window.imgHeight = 0;
 	window.imgPosition = "";
-	
+
 	// Close popup
-	
+
 	closePopup = function() {
 		
 		$(".popup").empty().remove();
@@ -74,9 +174,9 @@ $(document).ready(function() {
 		window.popped = false;
 		
 	};
-	
+
 	// Add arrows to popup
-	
+
 	addArrows = function() {
 		
 		$(".popup").append($arrowLeft, $arrowRight);
@@ -86,9 +186,9 @@ $(document).ready(function() {
 		$(".arrow-right").show();
 		
 	};
-	
+
 	// Position arrows and caption based on image height
-	
+
 	positionAddons = function() {
 		
 		window.imgHeight = ($(".open").height() / 2) - ($(".arrow-left").height() / 2);
@@ -98,9 +198,9 @@ $(document).ready(function() {
 		$(".caption").css("marginTop", captionMargin);
 		
 	};
-	
+
 	// Change what the original clicked image is
-	
+
 	setImgPosition = function() {
 		
 		if(!$(".original").parentsUntil().hasClass("wrap")) {
@@ -126,7 +226,7 @@ $(document).ready(function() {
 		}
 		
 	};
-	
+
 	changePrevOriginal = function() {
 		
 		$(".original").addClass("old-original");
@@ -135,7 +235,7 @@ $(document).ready(function() {
 		setImgPosition();
 		
 	};
-	
+
 	changeNextOriginal = function() {
 		
 		$(".original").addClass("old-original");
@@ -144,11 +244,11 @@ $(document).ready(function() {
 		setImgPosition();
 		
 	};
-	
+
 	updateArrows = function() {
 		
 		if(!$(".original").parentsUntil().hasClass("wrap")) {
-	
+
 			if(window.imgPosition === "first") {
 				
 				$(".arrow-left").hide();
@@ -165,17 +265,17 @@ $(document).ready(function() {
 			}
 		
 		}
-	
+
 	};
-	
+
 	// Create divs for popup
-	
+
 	var $popup = $("<div>", {"class": "popup"});
 	var $exit = $("<i>", {"class": "fa fa-times x-out"});
 	var $arrowLeft = $("<i>", {"class": "fa fa-chevron-left arrow-left addon"});
 	var $arrowRight = $("<i>", {"class": "fa fa-chevron-right arrow-right addon"});
 	var $caption = $("<div>", {"class": "caption addon"});
-	
+
 	$(".pop").click(function() {
 		
 		// Ensure popup isn't already open
@@ -285,9 +385,9 @@ $(document).ready(function() {
 		}
 		
 	});
-	
+
 	// Close popup when clicking outside of the image (or X button by default), but not when clicking addons
-	
+
 	$(window).click(function() {
 		
 		var target = $(event.target);
@@ -299,8 +399,8 @@ $(document).ready(function() {
 		}
 		
 	});
-	
- 	$(".pop").click(function(event) {
+
+	$(".pop").click(function(event) {
 		
 		if(!($(this).parent().is(".popup"))) {
 		
@@ -308,10 +408,10 @@ $(document).ready(function() {
 		
 		}
 		
- 	});
-	
+	});
+
 	// Hover effects for left and right side of popup image
-	
+
 	$(".kj").on("click", "img", function(e) {
 		
 		if($(this).hasClass("open")) {
@@ -331,9 +431,9 @@ $(document).ready(function() {
 		}
 		
 	});
-	
+
 	// Switch popup image with arrows
-	
+
 	$(document).on("click", ".addon", function() {
 		
 		if($(this).is(".arrow-left")) {
@@ -375,79 +475,18 @@ $(document).ready(function() {
 		}
 		
 	});
-	
-	// Hover effects
-	
-	$(".kj *").hover(function() {
 
-		if($(this).is("[transition]")) {
-			
-			$(this).css("transition", $(this).attr("transition") + "s ease");
-			
-		}
+	$(window).resize(function() {
 		
-		if($(this).is("[hover]")) {
-			
-			if(!$(this).hasClass("disabled")) {
-		
-				$(this).addClass($(this).attr("hover"));
-			
-			}
-		
-		}
+		positionAddons();
 		
 	});
 	
-	// Expanders
-	
-	window.isChanged = false;
-	
-	$(".expander").click(function() {
-		
-		$(this).toggleClass("expanded");
-		
-		// Icon changing
+	/*
 
-		if($(this).is("[change-icon]")) {
-			
-			window.newIcon = $(this).attr("change-icon");
-			
-			if(window.isChanged === false) {
-				
-				window.currentIcon = $(this).find("i").attr("class").split(" ")[1];
-			
-				$(this).find("i").removeClass(window.currentIcon);
-				$(this).find("i").addClass(window.newIcon);
-				window.isChanged = true;
-				
-			} else {
-				
-				$(this).find("i").removeClass(window.newIcon);
-				$(this).find("i").addClass(window.currentIcon);
-				window.isChanged = false;
-				
-			}
-			
-		}
+		{ Progress Bars }
 		
-	});
-	
-	// Advertisement sizes
-		
-	$(".advertisement").each(function(i){
-		
-		if($(this).is("[size]")) {
-			
-			var width = $(this).attr("size").split("x")[0];
-			var height = $(this).attr("size").split("x")[1];
-			$(this).css("width", width + "px");
-			$(this).css("height", height + "px");
-		
-		}
-		
-	});
-	
-	// Progress bars
+	*/
 	
 	$(".inner-bar").each(function(i) {
 		
@@ -455,7 +494,7 @@ $(document).ready(function() {
 		var $animateBar = $("<div>", {"class": "animate-bar"});
 		var $innerBarLabel = $("<div>", {"class": "inner-bar-label"});
 		var transitionTicks = $(this).attr("transition") * 1000;
-	
+
 		if($(this).is("[progress]")) {
 			
 			if($(this).is("[transition]")) {
@@ -541,79 +580,7 @@ $(document).ready(function() {
 			*/
 		
 		}
-	
-	});
-	
-	// Material ripple effect
-	
-	var materialInk, d, x, y;
-	
-	$(".button.material").click(function(e){
-		
-		if($(this).find(".materialInk").length == 0)
-			
-			$(this).prepend("<span class='materialInk'></span>");
-			materialInk = $(this).find(".materialInk");
-			materialInk.removeClass("animate");
 
-		if(!materialInk.height() && !materialInk.width()) {
-			
-			d = Math.max($(this).outerWidth(), $(this).outerHeight());
-			materialInk.css({height: d, width: d});
-			
-		}
+	});
 
-		x = e.pageX - $(this).offset().left - materialInk.width() / 2;
-		y = e.pageY - $(this).offset().top - materialInk.height() / 2;
-		
-		materialInk.css({top: y+'px', left: x+'px'}).addClass("animate");
-		
-	});
-	
-	// Position on page resize
-	
-	$(window).resize(function() {
-		
-		positionAddons();
-		
-		$(".columns .column .column").each(function(i){
-			
-			var scMargin = $(".cover").width() / 20;
-			
-			if($(this).hasClass("two")) {
-				
-				$(this).css("width", ($(this).parent().outerWidth() - scMargin) / 2);
-				
-				if(!$(this).is(":last-child")) {
-					
-					$(this).css("marginRight", scMargin);
-					
-				}
-				
-			} else if($(this).hasClass("three")) {
-				
-				$(this).css("width", ($(this).parent().outerWidth() - (scMargin * 2)) / 3);
-				
-				if(!$(this).is(":last-child")) {
-					
-					$(this).css("marginRight", scMargin);
-					
-				}
-				
-			} else if($(this).hasClass("four")) {
-				
-				$(this).css("width", ($(this).parent().outerWidth() - (scMargin * 3)) / 4);
-				
-				if(!$(this).is(":last-child")) {
-					
-					$(this).css("marginRight", scMargin);
-					
-				}
-				
-			}
-			
-		});
-		
-	});
-	
 });

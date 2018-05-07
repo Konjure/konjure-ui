@@ -16,8 +16,8 @@ input[type="reset"] {
 	overflow: hidden;
 	background-color: var(--detail-color);
 	color: var(--lightest-color);
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-top: var(--content-margin);
+	margin-bottom: var(--content-margin);
 	padding: 5px 10px 5px 10px;
 	letter-spacing: 1px;
 	-webkit-box-sizing: border-box;
@@ -61,7 +61,7 @@ input[type="reset"]:last-child {
 .button.outline,
 input.outline {
 	background-color: transparent;
-	border: 2px solid var(--detail-color);
+	border: var(--content-border-thickness) solid var(--detail-color);
 	color: var(--detail-color);
 }
 

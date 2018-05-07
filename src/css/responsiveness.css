@@ -15,66 +15,21 @@
 @media screen and (max-width: 992px) {
 	.cover {
 		width: 100%;
-		padding-left: 50px;
-		padding-right: 50px;
+		padding-left: var(--content-padding);
+		padding-right: var(--content-padding);
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 	}
-	.column.four {
-		width: 47.5%;
-	}
-	.column.four:nth-child(4n),
-	.column.four:nth-child(even) {
-		margin-right: 0;
-	}
-	.column.four:nth-child(odd) {
-		margin-right: 5%;
-	}
-	.column.four:nth-child(4n+1):nth-last-child(-n+4),
-	.column.four:nth-child(4n+1):nth-last-child(-n+4) ~ .column.four {
-		margin-bottom: 5%;
-	}
-	.column.four:nth-child(2n+1):nth-last-child(-n+2),
-	.column.four:nth-child(2n+1):nth-last-child(-n+2) ~ .column.four {
-		margin-bottom: 0 !important;
-	}
 }
 
 @media screen and (max-width: 768px) {
-	.columns {
-		margin-bottom: 50px;
-	}
-	.column {
-		margin-bottom: 50px;
-	}
-	.column.two,
-	.column.three,
-	.column.four {
-		width: 100% !important;
-		margin-right: 0 !important;
-		margin-bottom: 50px !important;
-	}
-	.column.four:nth-child(2n+1):nth-last-child(-n+2),
-	.column.four:nth-child(2n+1):nth-last-child(-n+2) ~ .column.four {
-		margin-bottom: 40px !important;
-	}
-	.column.two:last-child,
-	.column.three:last-child,
-	.column.four:last-child {
-		margin-bottom: 0 !important;
-	}
-	.section {
+	* {
 		text-align: center;
 	}
 	img {
-		margin: auto;
-	}
-	p.title {
-		font-size: 30px;
-	}
-	p, .button {
-		font-size: 25px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	.caption {
 		margin-top: 0 !important;

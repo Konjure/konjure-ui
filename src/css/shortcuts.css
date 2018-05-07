@@ -56,43 +56,43 @@
 }
 
 .padding {
-	padding: 20px;
+	padding: var(--content-padding);
 }
 
 .padding-top {
-	padding-top: 20px;
+	padding-top: var(--content-padding);
 }
 
 .padding-right {
-	padding-right: 20px;
+	padding-right: var(--content-padding);
 }
 
 .padding-bottom {
-	padding-bottom: 20px;
+	padding-bottom: var(--content-padding);
 }
 
 .padding-left {
-	padding-left: 20px;
+	padding-left: var(--content-padding);
 }
 
 .margin {
-	margin: 20px;
+	margin: var(--content-margin);
 }
 
 .margin-top {
-	margin-top: 20px;
+	margin-top: var(--content-margin);
 }
 
 .margin-right {
-	margin-right: 20px;
+	margin-right: var(--content-margin);
 }
 
 .margin-bottom {
-	margin-bottom: 20px;
+	margin-bottom: var(--content-margin);
 }
 
 .margin-left {
-	margin-left: 20px;
+	margin-left: var(--content-margin);
 }
 
 .background, .background-color {
@@ -114,26 +114,26 @@
 }
 
 .border {
-	border: 2px solid var(--neutral-color);
+	border: var(--content-border-thickness) solid var(--neutral-color);
 }
 
 .border-top {
-	border-top: 2px solid var(--neutral-color);
+	border-top: var(--content-border-thickness) solid var(--neutral-color);
 }
 
 .border-right {
-	border-right: 2px solid var(--neutral-color);
+	border-right: var(--content-border-thickness) solid var(--neutral-color);
 }
 
 .border-bottom {
-	border-bottom: 2px solid var(--neutral-color);
+	border-bottom: var(--content-border-thickness) solid var(--neutral-color);
 }
 
 .border-left {
-	border-left: 2px solid var(--neutral-color);
+	border-left: var(--content-border-thickness) solid var(--neutral-color);
 }
 
-.circle {
+.circle, .circular {
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
@@ -141,16 +141,16 @@
 }
 
 .slight-rounded {
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	-webkit-border-radius: var(--content-slight-rounded);
+	-moz-border-radius: var(--content-slight-rounded);
+	border-radius: var(--content-slight-rounded);
 	overflow: hidden;
 }
 
 .rounded {
-	-webkit-border-radius: 20px;
-	-moz-border-radius: 20px;
-	border-radius: 20px;
+	-webkit-border-radius: var(--content-rounded);
+	-moz-border-radius: var(--content-rounded);
+	border-radius: var(--content-rounded);
 	overflow: hidden;
 }
 
