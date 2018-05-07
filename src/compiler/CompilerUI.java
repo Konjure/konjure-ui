@@ -188,13 +188,13 @@ public class CompilerUI extends JFrame implements ActionListener {
 		JOptionPane.showMessageDialog(null, directory);
 		JOptionPane.showMessageDialog(null, newFile);
 		
-		String begText = "/*" + System.lineSeparator() + 
+		String begText = "/*" + System.lineSeparator() + System.lineSeparator() +
 				"\t* Konjure UI CSS Library v0.1" + System.lineSeparator() +
 				"\t* https://konjure.org/ui" +  System.lineSeparator() +  System.lineSeparator() +
 				"\t* Copyright (c) 2018 Konjure and other contributors" + System.lineSeparator() +
 				"\t* Released under the MIT license" + System.lineSeparator() +
 				"\t* https://opensource.org/licenses/MIT" + System.lineSeparator() + System.lineSeparator() +
-				"*/t";
+				"*/";
 		
 		FileOutputStream out = new FileOutputStream(newFile);
 		out.write(begText.getBytes());
