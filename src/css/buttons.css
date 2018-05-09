@@ -13,10 +13,11 @@ input[type="reset"] {
 	display: inline-block;
 	position: relative;
 	background-color: var(--detail-color);
-	color: var(--lightest-color);
 	margin-top: var(--content-margin);
 	margin-bottom: var(--content-margin);
-	padding: 5px 10px 5px 10px;
+	padding: var(--button-padding);
+	font-size: var(--button-font-size);
+	color: var(--lightest-color);
 	text-align: center;
 	letter-spacing: 1px;
 	-webkit-box-sizing: border-box;
@@ -40,13 +41,13 @@ input[type="reset"]:last-child {
 }
 
 .button.large {
-	font-size: 20px;
-	padding: 6px 12px 6px 12px;
+	font-size: var(--large-button-font-size);
+	padding: var(--large-button-padding);
 }
 
 .button.small {
-	font-size: 12px;
-	padding: 4px 8px 4px 8px;
+	font-size: var(--small-button-font-size);
+	padding: var(--small-button-padding);
 }
 
 .button:hover {

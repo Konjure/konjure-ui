@@ -46,6 +46,15 @@
 	--section-padding: 100px;
 	--cover-width: 1200px;
 	
+	/* Buttons */
+	
+	--button-font-size: 16px;
+	--button-padding: 5px 10px 5px 10px;
+	--large-button-font-size: 24px;
+	--large-button-padding: 6px 12px 6px 12px;
+	--small-button-font-size: 13px;
+	--small-button-padding: 4px 8px 4px 8px;
+	
 	/* Grid */
 	
 	--grid-margin: 2%;
