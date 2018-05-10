@@ -44,22 +44,22 @@
 	flex-grow: 1;
 }
 
-.grid .column-1, .grid .cell-1 { width: calc((6.25vw - var(--grid-margin)) + ((var(--grid-margin) / 16))); }
-.grid .column-2, .grid .cell-2 { width: calc((12.5vw - var(--grid-margin)) + ((var(--grid-margin) / (16 / 2)))); }
-.grid .column-3, .grid .cell-3 { width: calc((18.75vw - var(--grid-margin)) + ((var(--grid-margin) / (16 / 3)))); }
-.grid .column-4, .grid .cell-4 { width: calc((25vw - var(--grid-margin)) + ((var(--grid-margin) / (16 / 4)))); }
-.grid .column-5, .grid .cell-5 { width: calc((31.25vw - var(--grid-margin)) + ((var(--grid-margin) / (16 / 5)))); }
-.grid .column-6, .grid .cell-6 { width: calc((37.5vw - var(--grid-margin)) + ((var(--grid-margin) / (16 / 6)))); }
-.grid .column-7, .grid .cell-7 { width: calc((43.75vw - var(--grid-margin)) + ((var(--grid-margin) / (16 / 7)))); }
-.grid .column-8, .grid .cell-8 { width: calc((50vw - var(--grid-margin)) + ((var(--grid-margin) / (16 / 8)))); }
-.grid .column-9, .grid .cell-9 { width: calc((56.25vw - var(--grid-margin)) + ((var(--grid-margin) / (16 / 9)))); }
-.grid .column-10, .grid .cell-10 { width: calc((62.5vw - var(--grid-margin)) + ((var(--grid-margin) / (16 / 10)))); }
-.grid .column-11, .grid .cell-11 { width: calc((68.75vw - var(--grid-margin)) + ((var(--grid-margin) / (16 / 11)))); }
-.grid .column-12, .grid .cell-12 { width: calc((75vw - var(--grid-margin)) + ((var(--grid-margin) / (16 / 12)))); }
-.grid .column-13, .grid .cell-13 { width: calc((81.25vw - var(--grid-margin)) + ((var(--grid-margin) / (16 / 13)))); }
-.grid .column-14, .grid .cell-14 { width: calc((87.5vw - var(--grid-margin)) + ((var(--grid-margin) / (16 / 14)))); }
-.grid .column-15, .grid .cell-15 { width: calc((93.75vw - var(--grid-margin)) + ((var(--grid-margin) / (16 / 15)))); }
-.grid .column-16, .grid .cell-16 { width: calc((100vw - var(--grid-margin)) + ((var(--grid-margin) / (16 / 16)))); }
+.grid .column-1, .grid .cell-1 { width: calc((6.25% - var(--grid-margin)) + ((var(--grid-margin) / 16))); }
+.grid .column-2, .grid .cell-2 { width: calc((12.5% - var(--grid-margin)) + ((var(--grid-margin) / (16 / 2)))); }
+.grid .column-3, .grid .cell-3 { width: calc((18.75% - var(--grid-margin)) + ((var(--grid-margin) / (16 / 3)))); }
+.grid .column-4, .grid .cell-4 { width: calc((25% - var(--grid-margin)) + ((var(--grid-margin) / (16 / 4)))); }
+.grid .column-5, .grid .cell-5 { width: calc((31.25% - var(--grid-margin)) + ((var(--grid-margin) / (16 / 5)))); }
+.grid .column-6, .grid .cell-6 { width: calc((37.5% - var(--grid-margin)) + ((var(--grid-margin) / (16 / 6)))); }
+.grid .column-7, .grid .cell-7 { width: calc((43.75% - var(--grid-margin)) + ((var(--grid-margin) / (16 / 7)))); }
+.grid .column-8, .grid .cell-8 { width: calc((50% - var(--grid-margin)) + ((var(--grid-margin) / (16 / 8)))); }
+.grid .column-9, .grid .cell-9 { width: calc((56.25% - var(--grid-margin)) + ((var(--grid-margin) / (16 / 9)))); }
+.grid .column-10, .grid .cell-10 { width: calc((62.5% - var(--grid-margin)) + ((var(--grid-margin) / (16 / 10)))); }
+.grid .column-11, .grid .cell-11 { width: calc((68.75% - var(--grid-margin)) + ((var(--grid-margin) / (16 / 11)))); }
+.grid .column-12, .grid .cell-12 { width: calc((75% - var(--grid-margin)) + ((var(--grid-margin) / (16 / 12)))); }
+.grid .column-13, .grid .cell-13 { width: calc((81.25% - var(--grid-margin)) + ((var(--grid-margin) / (16 / 13)))); }
+.grid .column-14, .grid .cell-14 { width: calc((87.5% - var(--grid-margin)) + ((var(--grid-margin) / (16 / 14)))); }
+.grid .column-15, .grid .cell-15 { width: calc((93.75% - var(--grid-margin)) + ((var(--grid-margin) / (16 / 15)))); }
+.grid .column-16, .grid .cell-16 { width: calc((100% - var(--grid-margin)) + ((var(--grid-margin) / (16 / 16)))); }
 
 /* Percentage-based Grid */
 
