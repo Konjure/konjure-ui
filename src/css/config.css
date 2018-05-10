@@ -55,6 +55,14 @@
 	--small-button-font-size: 13px;
 	--small-button-padding: 4px 8px 4px 8px;
 	
+	/* Separators */
+	
+	--divider-thickness: 1px;
+	
+	/* Gallery */
+	
+	--popup-dim-amount: 30%;
+	
 	/* Grid */
 	
 	--grid-margin: 2%;
