@@ -40,6 +40,7 @@
 	--h4-size: 16px;
 	--h5-size: 14px;
 	--h6-size: 13px;
+	--heading-line-height: 1.25;
 	
 	/* Building Blocks */
 	
@@ -48,12 +49,12 @@
 	
 	/* Buttons */
 	
+	--small-button-font-size: 13px;
+	--small-button-padding: 4px 8px 4px 8px;
 	--button-font-size: 16px;
 	--button-padding: 5px 10px 5px 10px;
 	--large-button-font-size: 24px;
 	--large-button-padding: 6px 12px 6px 12px;
-	--small-button-font-size: 13px;
-	--small-button-padding: 4px 8px 4px 8px;
 	
 	/* Separators */
 	
@@ -67,6 +68,12 @@
 	
 	--grid-margin: 2%;
 	--grid-padding: 15px;
+	
+	/* Progress Bars */
+	
+	--small-progress-bar-height: 25px;
+	--progress-bar-height: 35px;
+	--large-progress-bar-height: 45px;
 	
 	/* Shortcuts */
 	
