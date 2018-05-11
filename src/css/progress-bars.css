@@ -7,22 +7,18 @@
 */
 
 .bar {
-	height: 35px;
+	height: var(--progress-bar-height);
 	width: 100%;
 	background-color: var(--light-color);
 	position: relative;
 }
 
 .bar.small {
-	height: 25px;
-}
-
-.bar.medium {
-	height: 35px;
+	height: var(--small-progress-bar-height);
 }
 
 .bar.large {
-	height: 45px;
+	height: var(--large-progress-bar-height);
 }
 
 .inner-bar {

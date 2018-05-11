@@ -24,9 +24,9 @@ body.dim {
 }
 
 body.dim > *:not(.popup) {
-	-webkit-filter: brightness(30%);
-	-moz-filter: brightness(30%);
-	filter: brightness(30%);
+	-webkit-filter: brightness(var(--popup-dim-amount));
+	-moz-filter: brightness(var(--popup-dim-amount));
+	filter: brightness(var(--popup-dim-amount));
 	pointer-events: none;
 }
 

@@ -40,14 +40,14 @@ input[type="reset"]:last-child {
 	margin-bottom: 0;
 }
 
-.button.large {
-	font-size: var(--large-button-font-size);
-	padding: var(--large-button-padding);
-}
-
 .button.small {
 	font-size: var(--small-button-font-size);
 	padding: var(--small-button-padding);
+}
+
+.button.large {
+	font-size: var(--large-button-font-size);
+	padding: var(--large-button-padding);
 }
 
 .button:hover {
