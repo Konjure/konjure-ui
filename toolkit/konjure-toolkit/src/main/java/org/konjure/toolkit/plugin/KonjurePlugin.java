@@ -22,16 +22,20 @@
  * SOFTWARE.
  */
 
-package org.konjure.toolkit.compiler;
+package org.konjure.toolkit.plugin;
+
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.Options;
 
 /**
  * @author Connor Hollasch
  * @since 5/9/2018
  */
-public class KonjureCompiler
+public interface KonjurePlugin
 {
-    public static void main (final String... args)
-    {
-        // TODO
-    }
+    String cliName ();
+
+    void populateOptionSpec (final Options options);
+
+    void execute (final CommandLine commandLine);
 }
