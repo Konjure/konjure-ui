@@ -199,26 +199,20 @@ public class KonjureCompiler implements KonjurePlugin
     {
         if (minify) {
             try {
+                final StringWriter writer = new StringWriter();
+
                 if (compileExtension.equals(CompileExtension.JS)) {
                     final JavaScriptCompressor jsCompressor = new JavaScriptCompressor(
                             new StringReader(combine),
                             new KonjureYuiErrorReporter());
-
-                    final StringWriter jsWriter = new StringWriter();
-                    jsCompressor.compress(jsWriter, lineBreakLength, true, true, false, false);
-                    KonjureToolkit.getLogger().info("All JS sources minified...");
-
-                    combine = jsWriter.getBuffer().toString();
+                    jsCompressor.compress(writer, lineBreakLength, true, true, false, false);
                 } else {
-
                     final CssCompressor cssCompressor = new CssCompressor(new StringReader(combine));
-
-                    final StringWriter cssWriter = new StringWriter();
-                    cssCompressor.compress(cssWriter, lineBreakLength);
-                    KonjureToolkit.getLogger().info("All CSS sources minified...");
-
-                    combine = cssWriter.getBuffer().toString();
+                    cssCompressor.compress(writer, lineBreakLength);
                 }
+
+                KonjureToolkit.getLogger().info("All " + compileExtension.toString() + " sources minified...");
+                combine = writer.getBuffer().toString();
             } catch (final IOException e) {
                 KonjureToolkit.getLogger().error("An error occurred while minifying JS/CSS files", e);
                 e.printStackTrace();
