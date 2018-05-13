@@ -12,6 +12,7 @@
 }
 
 .grid, .grid [class*="row"] {
+	height: 100%;
 	width: 100%;
 	margin-bottom: var(--grid-margin);
 }
