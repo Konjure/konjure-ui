@@ -7,27 +7,27 @@
 */
 
 .brighten:hover {
-	-webkit-filter: brightness(110%);
-	-moz-filter: brightness(110%);
-	filter: brightness(110%);
+	-webkit-filter: brightness(var(--brighten-value));
+	-moz-filter: brightness(var(--brighten-value));
+	filter: brightness(var(--brighten-value));
 }
 
 .darken:hover {
-	-webkit-filter: brightness(90%);
-	-moz-filter: brightness(90%);
-	filter: brightness(90%);
+	-webkit-filter: brightness(var(--darken-value));
+	-moz-filter: brightness(var(--darken-value));
+	filter: brightness(var(--darken-value));
 }
 
 .grow:hover {
-	-ms-transform: scale(1.1);
-	-webkit-transform: scale(1.1);
-	transform: scale(1.1);
+	-ms-transform: scale(var(--grow-value));
+	-webkit-transform: scale(var(--grow-value));
+	transform: scale(var(--grow-value));
 }
 
 .shrink:hover {
-	-ms-transform: scale(0.9);
-	-webkit-transform: scale(0.9);
-	transform: scale(0.9);
+	-ms-transform: scale(var(--shrink-value));
+	-webkit-transform: scale(var(--shrink-value));
+	transform: scale(var(--shrink-value));
 }
 
 .underline:hover {

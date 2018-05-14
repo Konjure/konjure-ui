@@ -69,6 +69,13 @@
 	--grid-margin: 2%;
 	--grid-padding: 15px;
 	
+	/* Hover Effects */
+	
+	--brighten-value: 120%;
+	--darken-value: 80%;
+	--grow-value: 1.2;
+	--shrink-value: 0.8;
+	
 	/* Progress Bars */
 	
 	--small-progress-bar-height: 25px;
