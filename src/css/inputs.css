@@ -16,16 +16,16 @@ select {
 }
 
 ::placeholder {
-	color: var(--neutral-color);
+	color: var(--dark-color);
 	opacity: 1;
 }
 
 :-ms-input-placeholder {
-	color: var(--neutral-color);
+	color: var(--dark-color);
 }
 
 ::-ms-input-placeholder {
-	color: var(--neutral-color);
+	color: var(--dark-color);
 }
 
 input[type="text"],
