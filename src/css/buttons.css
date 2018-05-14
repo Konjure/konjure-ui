@@ -7,6 +7,7 @@
 */
 
 .button,
+button,
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
@@ -27,6 +28,7 @@ input[type="reset"] {
 }
 
 .button:first-child,
+button:first-child,
 input[type="button"]:first-child,
 input[type="submit"]:first-child,
 input[type="reset"]:first-child {
@@ -34,6 +36,7 @@ input[type="reset"]:first-child {
 }
 
 .button:last-child,
+button:last-child,
 input[type="button"]:last-child,
 input[type="submit"]:last-child,
 input[type="reset"]:last-child {
@@ -45,26 +48,31 @@ button {
 	outline: 0;
 }
 
-.button.small {
+.button.small,
+button.small {
 	font-size: var(--small-button-font-size);
 	padding: var(--small-button-padding);
 }
 
-.button.large {
+.button.large,
+button.large {
 	font-size: var(--large-button-font-size);
 	padding: var(--large-button-padding);
 }
 
-.button:hover {
+.button:hover,
+button:hover {
 	cursor: pointer;
 }
 
-.button.disabled {
+.button.disabled,
+button.disabled {
 	opacity: 0.75;
 	cursor: not-allowed;
 }
 
 .button.outline,
+button.outline,
 input.outline {
 	background-color: transparent;
 	color: var(--detail-color);
