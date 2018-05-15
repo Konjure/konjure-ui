@@ -45,6 +45,11 @@
 	flex-grow: 1;
 }
 
+.grid img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
 .grid .column-1, .grid .cell-1 { width: calc((6.25% - var(--grid-margin)) + ((var(--grid-margin) / 16))); }
 .grid .column-2, .grid .cell-2 { width: calc((12.5% - var(--grid-margin)) + ((var(--grid-margin) / (16 / 2)))); }
 .grid .column-3, .grid .cell-3 { width: calc((18.75% - var(--grid-margin)) + ((var(--grid-margin) / (16 / 3)))); }
