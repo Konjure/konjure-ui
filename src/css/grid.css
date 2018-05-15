@@ -6,7 +6,7 @@
 
 */
 
-.grid, .grid [class*="column"], .grid [class*="row"], .grid [class*="cell"] {
+.grid, .grid [class*="column"], .grid [class*="row"] {
 	display: flex;
 	flex-wrap: wrap;
 }
