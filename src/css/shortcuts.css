@@ -163,16 +163,6 @@
 	filter: blur(4px);
 }
 
-.brightness, .brighten {
-	-webkit-filter: brightness(110%);
-	filter: brightness(110%);
-}
-
-.darken {
-	-webkit-filter: brightness(90%);
-	filter: brightness(90%);
-}
-
 .contrast {
 	-webkit-filter: contrast(110%);
 	filter: contrast(110%);

@@ -6,7 +6,7 @@
 
 */
 
-.grid, .grid [class*="column"], .grid [class*="row"], .grid [class*="cell"] {
+.grid, .grid [class*="column"], .grid [class*="row"] {
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -43,6 +43,12 @@
 
 .grid .column, .grid .cell {
 	flex-grow: 1;
+}
+
+.grid img {
+	max-height: 100%;
+	max-width: 100%;
+	object-fit: contain;
 }
 
 .grid .column-1, .grid .cell-1 { width: calc((6.25% - var(--grid-margin)) + ((var(--grid-margin) / 16))); }
