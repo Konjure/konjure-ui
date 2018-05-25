@@ -22,42 +22,15 @@
  * SOFTWARE.
  */
 
-package org.konjure.toolkit.plugin;
-
-import org.konjure.toolkit.plugin.impl.KonjureCompiler;
-
-import java.util.HashMap;
-import java.util.Map;
+package org.konjure.toolkit.plugin.context;
 
 /**
  * @author Connor Hollasch
- * @since 5/10/2018
+ * @since 5/15/2018
  */
-public class KonjurePluginManager
+public interface KonjurePluginContext
 {
-    private Map<String, KonjurePlugin> plugins;
+    <T> T getFromKey (final String key);
 
-    public KonjurePluginManager ()
-    {
-        this.plugins = new HashMap<>();
-
-        // Add impl for application integration.
-        addPlugin(new KonjureCompiler());
-    }
-
-    public KonjurePlugin getPluginByName (final String name)
-    {
-        return this.plugins.get(name.toLowerCase());
-    }
-
-    public Map<String, KonjurePlugin> getPlugins ()
-    {
-        return this.plugins;
-    }
-
-    private void addPlugin (final KonjurePlugin plugin)
-    {
-        final String name = plugin.cliName().toLowerCase();
-        this.plugins.put(name, plugin);
-    }
+    boolean isInputSpecified (final String key);
 }

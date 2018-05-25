@@ -22,42 +22,38 @@
  * SOFTWARE.
  */
 
-package org.konjure.toolkit.plugin;
+package org.konjure.toolkit.plugin.context.cli;
 
-import org.konjure.toolkit.plugin.impl.KonjureCompiler;
-
-import java.util.HashMap;
-import java.util.Map;
+import org.apache.commons.cli.CommandLine;
+import org.konjure.toolkit.plugin.context.KonjurePluginContext;
 
 /**
  * @author Connor Hollasch
- * @since 5/10/2018
+ * @since 5/15/2018
  */
-public class KonjurePluginManager
+public class KonjureCLIPluginContext implements KonjurePluginContext
 {
-    private Map<String, KonjurePlugin> plugins;
+    private CommandLine commandLine;
 
-    public KonjurePluginManager ()
+    public KonjureCLIPluginContext (final CommandLine commandLine)
     {
-        this.plugins = new HashMap<>();
-
-        // Add impl for application integration.
-        addPlugin(new KonjureCompiler());
+        this.commandLine = commandLine;
     }
 
-    public KonjurePlugin getPluginByName (final String name)
+    @Override
+    public <T> T getFromKey (final String key)
     {
-        return this.plugins.get(name.toLowerCase());
+        return (T) this.commandLine.getOptionValue(key);
     }
 
-    public Map<String, KonjurePlugin> getPlugins ()
+    @Override
+    public boolean isInputSpecified (final String key)
     {
-        return this.plugins;
+        return this.commandLine.hasOption(key);
     }
 
-    private void addPlugin (final KonjurePlugin plugin)
+    public String[] getArgs()
     {
-        final String name = plugin.cliName().toLowerCase();
-        this.plugins.put(name, plugin);
+        return this.commandLine.getArgs();
     }
 }

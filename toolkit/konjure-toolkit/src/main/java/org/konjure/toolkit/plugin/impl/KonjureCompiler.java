@@ -22,25 +22,28 @@
  * SOFTWARE.
  */
 
-package org.konjure.toolkit.plugins;
+package org.konjure.toolkit.plugin.impl;
 
 import com.yahoo.platform.yui.compressor.CssCompressor;
 import com.yahoo.platform.yui.compressor.JavaScriptCompressor;
-import com.yahoo.platform.yui.compressor.YUICompressor;
-import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.log4j.Logger;
 import org.konjure.toolkit.KonjureToolkit;
 import org.konjure.toolkit.plugin.KonjurePlugin;
+import org.konjure.toolkit.plugin.context.KonjurePluginContext;
+import org.konjure.toolkit.plugin.context.cli.KonjureCLIPluginContext;
+import org.konjure.toolkit.plugin.context.gui.KonjureGUIInputType;
+import org.konjure.toolkit.plugin.context.gui.KonjureGUIOptions;
 import org.mozilla.javascript.ErrorReporter;
 import org.mozilla.javascript.EvaluatorException;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collection;
 
 /**
  * @author Connor Hollasch
@@ -55,7 +58,13 @@ public class KonjureCompiler implements KonjurePlugin
     }
 
     @Override
-    public void populateOptionSpec (final Options options)
+    public String guiName ()
+    {
+        return "UI Compiler";
+    }
+
+    @Override
+    public void populateCLIOptionSpec (final Options options)
     {
         final Option srcDirectoryOption = new Option("s", "src", true, "Source directory");
         srcDirectoryOption.setArgName("directory");
@@ -88,19 +97,36 @@ public class KonjureCompiler implements KonjurePlugin
     }
 
     @Override
-    public void execute (final CommandLine commandLine)
+    public void populateGUIOptionSpec (final KonjureGUIOptions options)
     {
-        final String srcArg = commandLine.getOptionValue("s");
-        final String destArg = commandLine.getOptionValue("d");
-        final String versionArg = commandLine.getOptionValue("v");
+        options.addGUIOption("v", "Version", KonjureGUIInputType.TEXT_FIELD, "v1.0.0");
 
-        final boolean minify = commandLine.hasOption("m");
-        final boolean recursive = commandLine.hasOption("r");
+        options.addGUIOption("s", "Source Directory", KonjureGUIInputType.FOLDER_INPUT, "...");
+        options.addGUIOption("d", "Destination Directory", KonjureGUIInputType.FOLDER_INPUT, "...");
+
+        options.addGUIOption("js", "Combine JS", KonjureGUIInputType.BOOLEAN, true);
+        options.addGUIOption("css", "Combine CSS", KonjureGUIInputType.BOOLEAN, true);
+
+        options.addGUIOption("lb", "Line Break Length", KonjureGUIInputType.NUMBER_INPUT, 100);
+
+        options.addGUIOption("m", "Enable Minification", KonjureGUIInputType.BOOLEAN, false);
+        options.addGUIOption("r", "Search Directories Recursively", KonjureGUIInputType.BOOLEAN, true);
+    }
+
+    @Override
+    public String execute (final KonjurePluginContext pluginContext)
+    {
+        final String srcArg = pluginContext.getFromKey("s");
+        final String destArg = pluginContext.getFromKey("d");
+        final String versionArg = pluginContext.getFromKey("v");
+
+        final boolean minify = pluginContext.isInputSpecified("m");
+        final boolean recursive = pluginContext.isInputSpecified("r");
 
         int lineBreakLength = -1;
-        if (minify && commandLine.hasOption("lb")) {
+        if (minify && pluginContext.isInputSpecified("lb")) {
             try {
-                lineBreakLength = Integer.parseInt(commandLine.getOptionValue("lb"));
+                lineBreakLength = Integer.parseInt(pluginContext.getFromKey("lb"));
             } catch (final NumberFormatException e) {
                 KonjureToolkit.getLogger().error("Could not parse integer for line break length", e);
             }
@@ -111,31 +137,44 @@ public class KonjureCompiler implements KonjurePlugin
 
         if (!src.exists()) {
             KonjureToolkit.getLogger().error("No such source directory " + src.getAbsolutePath());
-            return;
+            return "No such source directory " + src.getAbsolutePath();
         }
 
         if (!src.isDirectory()) {
             KonjureToolkit.getLogger().error("Source specified is not a directory");
-            return;
+            return "Source specified is not a directory";
         }
 
         if (!dest.exists()) {
             dest.mkdirs();
         }
 
-        final CompilationScope scope;
-        if (commandLine.getArgs().length > 0) {
-            scope = CompilationScope.valueOf(commandLine.getArgs()[0].toUpperCase());
-        } else {
-            scope = CompilationScope.ALL;
-        }
+        CompilationScope scope = null;
+        if (pluginContext instanceof KonjureCLIPluginContext) {
+            final KonjureCLIPluginContext cliContext = (KonjureCLIPluginContext) pluginContext;
 
-        if (scope == null) {
-            KonjureToolkit.getLogger().error("No such compilation scope " + commandLine.getArgs()[0]);
-            return;
+            if (cliContext.getArgs().length > 0) {
+                scope = CompilationScope.valueOf(cliContext.getArgs()[0].toUpperCase());
+            } else {
+                scope = CompilationScope.ALL;
+            }
+
+            if (scope == null) {
+                KonjureToolkit.getLogger().error("No such compilation scope " + cliContext.getArgs()[0]);
+                return "No such compilation scope " + cliContext.getArgs()[0];
+            }
+        } else {
+            if (pluginContext.isInputSpecified("js")) {
+                scope = CompilationScope.JS;
+            }
+
+            if (pluginContext.isInputSpecified("css")) {
+                scope = (scope != null ? CompilationScope.ALL : CompilationScope.CSS);
+            }
         }
 
         compile(src, dest, versionArg, minify, recursive, lineBreakLength, scope);
+        return "Compilation successful";
     }
 
     private void compile (
@@ -230,7 +269,8 @@ public class KonjureCompiler implements KonjurePlugin
         final String header = "/*" + nLine + nLine +
                 "\t* Konjure UI " + extension.toString() + " Library v" + version + nLine +
                 "\t* https://konjure.org/ui" + nLine + nLine +
-                "\t* Copyright (c) " + Calendar.getInstance().get(Calendar.YEAR) + " Konjure and other contributors" + nLine +
+                "\t* Copyright (c) " + Calendar.getInstance().get(Calendar.YEAR)
+                + " Konjure and other contributors" + nLine +
                 "\t* Released under the MIT license" + nLine +
                 "\t* https://opensource.org/licenses/MIT" + nLine + nLine +
                 "*/";

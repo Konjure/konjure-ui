@@ -22,42 +22,40 @@
  * SOFTWARE.
  */
 
-package org.konjure.toolkit.plugin;
+package org.konjure.toolkit.util;
 
-import org.konjure.toolkit.plugin.impl.KonjureCompiler;
+import org.konjure.toolkit.gui.KonjureAssets;
 
-import java.util.HashMap;
-import java.util.Map;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
 
 /**
  * @author Connor Hollasch
- * @since 5/10/2018
+ * @since 5/24/2018
  */
-public class KonjurePluginManager
+public class KonjureComponentUtil
 {
-    private Map<String, KonjurePlugin> plugins;
-
-    public KonjurePluginManager ()
+    public static JButton decorateButton (final String text, final float fontSize)
     {
-        this.plugins = new HashMap<>();
+        final JButton button = new JButton(text);
 
-        // Add impl for application integration.
-        addPlugin(new KonjureCompiler());
+        button.setFocusPainted(false);
+        button.setBackground(KonjureColorUtil.adjustBrightness(KonjureAssets.KONJURE_BLACK, 1.05f));
+        button.setForeground(KonjureAssets.KONJURE_GREEN);
+        button.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createEtchedBorder(),
+                BorderFactory.createEmptyBorder(5, 5, 5, 5)
+        ));
+
+        button.setFont(KonjureAssets.KONJURE_FONT.deriveFont(fontSize));
+
+        return button;
     }
 
-    public KonjurePlugin getPluginByName (final String name)
+    public static JButton buttonWithActionListener (final JButton button, final ActionListener actionListener)
     {
-        return this.plugins.get(name.toLowerCase());
-    }
-
-    public Map<String, KonjurePlugin> getPlugins ()
-    {
-        return this.plugins;
-    }
-
-    private void addPlugin (final KonjurePlugin plugin)
-    {
-        final String name = plugin.cliName().toLowerCase();
-        this.plugins.put(name, plugin);
+        button.addActionListener(actionListener);
+        return button;
     }
 }

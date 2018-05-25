@@ -25,33 +25,41 @@
 package org.konjure.toolkit;
 
 import org.apache.commons.cli.*;
+import org.konjure.toolkit.gui.KonjureUI;
 import org.konjure.toolkit.plugin.KonjurePlugin;
 import org.konjure.toolkit.plugin.KonjurePluginManager;
+import org.konjure.toolkit.plugin.context.cli.KonjureCLIPluginContext;
 
 /**
  * @author Connor Hollasch
  * @since 5/9/2018
  */
-public class KonjureToolkitContext
+public class KonjureToolkitLaunchContext
 {
-    private final String[] unparsedCliArgs;
-
     private KonjurePluginManager pluginManager;
+
+    private KonjureUI uiContext;
     private final CommandLineParser commandLineParser;
 
-    public KonjureToolkitContext (final KonjurePluginManager pluginManager, final String[] args)
+    public KonjureToolkitLaunchContext (final KonjurePluginManager pluginManager, final String[] args)
     {
         this.pluginManager = pluginManager;
-        this.unparsedCliArgs = args;
-
         this.commandLineParser = new BasicParser();
 
         if (args.length == 0) {
-            KonjureToolkit.getLogger().error("Must specify a toolkit module to execute. List of registered modules:");
-            printAllModules();
-            return;
+            doGUI();
+        } else {
+            doCLI(args);
         }
+    }
 
+    private void doGUI ()
+    {
+        this.uiContext = new KonjureUI(this.pluginManager);
+    }
+
+    private void doCLI (final String[] args)
+    {
         final String module = args[0].toLowerCase();
         final KonjurePlugin plugin = this.pluginManager.getPluginByName(module);
 
@@ -64,7 +72,7 @@ public class KonjureToolkitContext
         final HelpFormatter helpFormatter = new HelpFormatter();
         final Options options = new Options();
 
-        plugin.populateOptionSpec(options);
+        plugin.populateCLIOptionSpec(options);
 
         final Option helpOption = new Option("help", "help", false, "Displays the help page");
         options.addOption(helpOption);
@@ -80,7 +88,7 @@ public class KonjureToolkitContext
                 return;
             }
 
-            plugin.execute(commandLine);
+            plugin.execute(new KonjureCLIPluginContext(commandLine));
             return;
         } catch (final ParseException e) {
             System.out.println(e.getMessage());

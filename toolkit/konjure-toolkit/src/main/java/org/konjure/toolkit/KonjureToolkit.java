@@ -23,12 +23,12 @@ public class KonjureToolkit
     private static final Logger logger = Logger.getLogger(KonjureToolkit.class);
 
     private KonjurePluginManager pluginManager;
-    private KonjureToolkitContext toolkitContext;
+    private KonjureToolkitLaunchContext toolkitContext;
 
     public KonjureToolkit (final String... args) throws Exception
     {
         this.pluginManager = new KonjurePluginManager();
-        this.toolkitContext = new KonjureToolkitContext(this.pluginManager, args);
+        this.toolkitContext = new KonjureToolkitLaunchContext(this.pluginManager, args);
     }
 
     public static void main (final String... args)

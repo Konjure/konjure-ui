@@ -22,42 +22,38 @@
  * SOFTWARE.
  */
 
-package org.konjure.toolkit.plugin;
+package org.konjure.toolkit.plugin.context.gui;
 
-import org.konjure.toolkit.plugin.impl.KonjureCompiler;
+import org.konjure.toolkit.plugin.context.KonjurePluginContext;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
  * @author Connor Hollasch
- * @since 5/10/2018
+ * @since 5/15/2018
  */
-public class KonjurePluginManager
+public class KonjureGUIPluginContext implements KonjurePluginContext
 {
-    private Map<String, KonjurePlugin> plugins;
+    private Map<String, Object> optionSpec;
 
-    public KonjurePluginManager ()
+    public KonjureGUIPluginContext (final Map<String, Object> optionSpec)
     {
-        this.plugins = new HashMap<>();
-
-        // Add impl for application integration.
-        addPlugin(new KonjureCompiler());
+        this.optionSpec = optionSpec;
     }
 
-    public KonjurePlugin getPluginByName (final String name)
+    @Override
+    public <T> T getFromKey (final String key)
     {
-        return this.plugins.get(name.toLowerCase());
+        if (this.optionSpec.containsKey(key)) {
+            return (T) this.optionSpec.get(key);
+        }
+
+        return null;
     }
 
-    public Map<String, KonjurePlugin> getPlugins ()
+    @Override
+    public boolean isInputSpecified (final String key)
     {
-        return this.plugins;
-    }
-
-    private void addPlugin (final KonjurePlugin plugin)
-    {
-        final String name = plugin.cliName().toLowerCase();
-        this.plugins.put(name, plugin);
+        return this.optionSpec.containsKey(key);
     }
 }

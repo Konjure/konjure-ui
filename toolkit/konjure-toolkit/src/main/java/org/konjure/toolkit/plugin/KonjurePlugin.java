@@ -24,8 +24,9 @@
 
 package org.konjure.toolkit.plugin;
 
-import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.Options;
+import org.konjure.toolkit.plugin.context.KonjurePluginContext;
+import org.konjure.toolkit.plugin.context.gui.KonjureGUIOptions;
 
 /**
  * @author Connor Hollasch
@@ -35,7 +36,11 @@ public interface KonjurePlugin
 {
     String cliName ();
 
-    void populateOptionSpec (final Options options);
+    String guiName ();
 
-    void execute (final CommandLine commandLine);
+    void populateCLIOptionSpec (final Options options);
+
+    void populateGUIOptionSpec (final KonjureGUIOptions options);
+
+    String execute (final KonjurePluginContext context);
 }

@@ -22,42 +22,31 @@
  * SOFTWARE.
  */
 
-package org.konjure.toolkit.plugin;
+package org.konjure.toolkit.util;
 
-import org.konjure.toolkit.plugin.impl.KonjureCompiler;
-
-import java.util.HashMap;
-import java.util.Map;
+import java.awt.Color;
 
 /**
  * @author Connor Hollasch
- * @since 5/10/2018
+ * @since 5/24/2018
  */
-public class KonjurePluginManager
+public class KonjureColorUtil
 {
-    private Map<String, KonjurePlugin> plugins;
-
-    public KonjurePluginManager ()
+    public static Color adjustBrightness (final Color color, final float factor)
     {
-        this.plugins = new HashMap<>();
+        final float r = Math.min(255, color.getRed() * factor);
+        final float g = Math.min(255, color.getGreen() * factor);
+        final float b = Math.min(255, color.getBlue() * factor);
 
-        // Add impl for application integration.
-        addPlugin(new KonjureCompiler());
+        return new Color((int) r, (int) g, (int) b, color.getAlpha());
     }
 
-    public KonjurePlugin getPluginByName (final String name)
+    public static Color setAlpha (final Color input, final int alpha)
     {
-        return this.plugins.get(name.toLowerCase());
-    }
+        final int r = input.getRed();
+        final int g = input.getGreen();
+        final int b = input.getBlue();
 
-    public Map<String, KonjurePlugin> getPlugins ()
-    {
-        return this.plugins;
-    }
-
-    private void addPlugin (final KonjurePlugin plugin)
-    {
-        final String name = plugin.cliName().toLowerCase();
-        this.plugins.put(name, plugin);
+        return new Color(r, g, b, alpha);
     }
 }
