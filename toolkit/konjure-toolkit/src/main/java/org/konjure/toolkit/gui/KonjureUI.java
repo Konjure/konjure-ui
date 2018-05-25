@@ -250,9 +250,7 @@ public class KonjureUI
 
         bottomOptions.add(buttonWithActionListener(decorateButton("Back", 14f), e -> doHomeContext()));
         bottomOptions.add(new JLabel("      "));
-        bottomOptions.add(buttonWithActionListener(decorateButton("Reset", 14f), e -> {
-            doPluginContext(plugin);
-        }));
+        bottomOptions.add(buttonWithActionListener(decorateButton("Reset", 14f), e -> doPluginContext(plugin)));
 
         bottomOptions.add(new JLabel("      "));
         bottomOptions.add(buttonWithActionListener(decorateButton("Submit", 14f), e -> {
@@ -301,8 +299,8 @@ public class KonjureUI
 
     private void offloadFullScreenBGPaint (final Graphics g, final Image image)
     {
-        final int clipWidth = g.getClipBounds().width;
-        final int clipHeight = g.getClipBounds().height;
+        final int clipWidth = this.contentPanel.getWidth();
+        final int clipHeight = this.contentPanel.getHeight();
 
         g.setColor(Color.black);
         g.fillRect(0, 0, clipWidth, clipHeight);
