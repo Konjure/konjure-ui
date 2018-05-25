@@ -253,7 +253,7 @@ public class KonjureUI
         bottomOptions.add(buttonWithActionListener(decorateButton("Reset", 14f), e -> doPluginContext(plugin)));
 
         bottomOptions.add(new JLabel("      "));
-        bottomOptions.add(buttonWithActionListener(decorateButton("Submit", 14f), e -> {
+        bottomOptions.add(buttonWithActionListener(decorateButton("Execute", 14f), e -> {
             final KonjureGUIPluginContext context = guiOptions.buildContext();
 
             try {
