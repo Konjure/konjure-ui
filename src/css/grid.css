@@ -6,13 +6,16 @@
 
 */
 
+.grid {
+	height: 100%;
+}
+
 .grid, .grid [class*="column"], .grid [class*="row"] {
 	display: flex;
 	flex-wrap: wrap;
 }
 
 .grid, .grid [class*="row"] {
-	height: 100%;
 	width: 100%;
 	margin-bottom: var(--grid-margin);
 }
@@ -202,10 +205,16 @@
 
 /* Gridlines Attribute */
 
-.grid.gridlines [class*="column"] {
+.grid.gridlines {
 	-webkit-box-shadow: inset 0px 0px 0px 0.5px var(--red);
 	-moz-box-shadow: inset 0px 0px 0px 0.5px var(--red);
 	box-shadow: inset 0px 0px 0px 0.5px var(--red);
+}
+
+.grid.gridlines [class*="column"] {
+	-webkit-box-shadow: inset 0px 0px 0px 0.5px var(--green);
+	-moz-box-shadow: inset 0px 0px 0px 0.5px var(--green);
+	box-shadow: inset 0px 0px 0px 0.5px var(--green);
 }
 
 .grid.gridlines [class*="row"] {
