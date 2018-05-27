@@ -4,4 +4,4 @@
 
 The open-source backbone of Konjure. A clean, simple, and effective user interface framework.
 
-Website: [konjure.org/ui](https://konjure.org/ui)
+Website: [konjure.org/development/overview](https://konjure.org/development/overview)
