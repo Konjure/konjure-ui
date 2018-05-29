@@ -11,10 +11,8 @@ button,
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
-	display: inline-block;
 	position: relative;
 	background-color: var(--detail-color);
-	margin-top: var(--content-margin);
 	margin-bottom: var(--content-margin);
 	padding: var(--button-padding);
 	font-size: var(--button-font-size);
@@ -25,14 +23,6 @@ input[type="reset"] {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	overflow: hidden;
-}
-
-.button:first-child,
-button:first-child,
-input[type="button"]:first-child,
-input[type="submit"]:first-child,
-input[type="reset"]:first-child {
-	margin-top: 0;
 }
 
 .button:last-child,
