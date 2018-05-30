@@ -33,3 +33,8 @@
 .underline:hover {
 	text-decoration: underline;
 }
+
+.color:hover {
+	color: var(--darker-color);
+	border-color: var(--darker-color);
+}

@@ -69,11 +69,6 @@ input.outline {
 	border: var(--content-border-thickness) solid var(--detail-color);
 }
 
-.color:hover {
-	color: var(--darker-color);
-	border-color: var(--darker-color);
-}
-
 .materialEffect {
 	display: block; 
 	position: absolute;
