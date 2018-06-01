@@ -9,7 +9,6 @@
 .expander {
 	width: 100%;
 	position: relative;
-	background-color: var(--lighter-color);
 	padding: var(--content-padding);
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -17,12 +16,15 @@
 	overflow: hidden;
 }
 
-.expander:hover {
+.expander > h1:hover,
+.expander > h2:hover,
+.expander > h3:hover,
+.expander > h4:hover,
+.expander > h5:hover,
+.expander > h6:hover,
+.expander > p:hover,
+.expander > i:hover {
 	cursor: pointer;
-}
-
-.expander p.title {
-	margin-bottom: 0;
 }
 
 .expander i {
