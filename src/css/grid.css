@@ -10,29 +10,29 @@
 	height: 100%;
 }
 
-.grid, .grid [class*="column"], .grid [class*="row"] {
+.grid, .grid [class^="column"], .grid [class^="row"] {
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.grid, .grid [class*="row"] {
+.grid, .grid [class^="row"] {
 	width: 100%;
 	margin-bottom: var(--grid-margin);
 }
 
-.grid [class*="column"] {
+.grid [class^="column"] {
 	margin-right: var(--grid-margin);
 }
 
-.grid:last-child, .grid [class*="row"]:last-child {
+.grid:last-child, .grid [class^="row"]:last-child {
 	margin-bottom: 0;
 }
 
-.grid [class*="column"], .grid [class*="cell"] {
+.grid [class^="column"], .grid [class^="cell"] {
 	float: left;
 }
 
-.grid [class*="cell"] {
+.grid [class^="cell"] {
 	padding: var(--grid-padding);
 	margin-right: var(--grid-margin);
 	-webkit-box-sizing: border-box;
@@ -40,7 +40,7 @@
 	box-sizing: border-box;
 }
 
-.grid [class*="column"]:last-child, .grid [class*="cell"]:last-child {
+.grid [class^="column"]:last-child, .grid [class^="cell"]:last-child {
 	margin-right: 0;
 }
 
@@ -193,13 +193,13 @@
 .grid.no-margin .column-15, .grid .no-margin .column-15, .grid.no-margin .cell-15, .grid .no-margin .cell-15 { width: 93.75%; }
 .grid.no-margin .column-16, .grid .no-margin .column-16, .grid.no-margin .cell-16, .grid .no-margin .cell-16 { width: 100%; }
 
-.grid.no-margin [class*="column"], .grid .no-margin [class*="column"], .grid.no-margin [class*="row"], .grid .no-margin [class*="row"], .grid.no-margin [class*="cell"], .grid .no-margin [class*="cell"], [class*="column"].no-margin [class*="column"], [class*="column"] .no-margin [class*="column"], [class*="column"].no-margin [class*="row"], [class*="column"] .no-margin [class*="row"], [class*="column"].no-margin [class*="cell"], [class*="column"] .no-margin [class*="cell"], [class*="row"].no-margin [class*="column"], [class*="row"] .no-margin [class*="column"], [class*="row"].no-margin [class*="row"], [class*="row"] .no-margin [class*="row"], [class*="row"].no-margin [class*="cell"], [class*="row"] .no-margin [class*="cell"], [class*="cell"].no-margin [class*="column"], [class*="cell"] .no-margin [class*="column"], [class*="cell"].no-margin [class*="row"], [class*="cell"] .no-margin [class*="row"], [class*="cell"].no-margin [class*="cell"], [class*="cell"] .no-margin [class*="cell"] {
+.grid.no-margin [class^="column"], .grid .no-margin [class^="column"], .grid.no-margin [class^="row"], .grid .no-margin [class^="row"], .grid.no-margin [class^="cell"], .grid .no-margin [class^="cell"], [class^="column"].no-margin [class^="column"], [class^="column"] .no-margin [class^="column"], [class^="column"].no-margin [class^="row"], [class^="column"] .no-margin [class^="row"], [class^="column"].no-margin [class^="cell"], [class^="column"] .no-margin [class^="cell"], [class^="row"].no-margin [class^="column"], [class^="row"] .no-margin [class^="column"], [class^="row"].no-margin [class^="row"], [class^="row"] .no-margin [class^="row"], [class^="row"].no-margin [class^="cell"], [class^="row"] .no-margin [class^="cell"], [class^="cell"].no-margin [class^="column"], [class^="cell"] .no-margin [class^="column"], [class^="cell"].no-margin [class^="row"], [class^="cell"] .no-margin [class^="row"], [class^="cell"].no-margin [class^="cell"], [class^="cell"] .no-margin [class^="cell"] {
 	margin: 0;
 }
 
 /* No-Padding Attribute */
 
-.grid.no-padding [class*="cell"], .grid .no-padding [class*="cell"], [class*="column"].no-padding [class*="cell"], [class*="column"] .no-padding [class*="cell"], [class*="row"].no-padding [class*="cell"], [class*="row"] .no-padding [class*="cell"], [class*="cell"].no-padding [class*="cell"], [class*="cell"] .no-padding [class*="cell"] {
+.grid.no-padding [class^="cell"], .grid .no-padding [class^="cell"], [class^="column"].no-padding [class^="cell"], [class^="column"] .no-padding [class^="cell"], [class^="row"].no-padding [class^="cell"], [class^="row"] .no-padding [class^="cell"], [class^="cell"].no-padding [class^="cell"], [class^="cell"] .no-padding [class^="cell"] {
 	padding: 0;
 }
 
@@ -211,19 +211,19 @@
 	box-shadow: inset 0px 0px 0px 0.5px var(--red);
 }
 
-.grid.gridlines [class*="column"] {
+.grid.gridlines [class^="column"] {
 	-webkit-box-shadow: inset 0px 0px 0px 0.5px var(--green);
 	-moz-box-shadow: inset 0px 0px 0px 0.5px var(--green);
 	box-shadow: inset 0px 0px 0px 0.5px var(--green);
 }
 
-.grid.gridlines [class*="row"] {
+.grid.gridlines [class^="row"] {
 	-webkit-box-shadow: inset 0px 0px 0px 0.5px var(--yellow);
 	-moz-box-shadow: inset 0px 0px 0px 0.5px var(--yellow);
 	box-shadow: inset 0px 0px 0px 0.5px var(--yellow);
 }
 
-.grid.gridlines [class*="cell"] {
+.grid.gridlines [class^="cell"] {
 	-webkit-box-shadow: inset 0px 0px 0px 0.5px var(--blue);
 	-moz-box-shadow: inset 0px 0px 0px 0.5px var(--blue);
 	box-shadow: inset 0px 0px 0px 0.5px var(--blue);
