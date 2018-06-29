@@ -8,8 +8,6 @@
 
 $(document).ready(function() {
 
-	window.isChanged = false;
-
 	$(".expander > h1, .expander > h2, .expander > h3, .expander > h4, .expander > h5, .expander > h6, .expander > p, .expander > i").click(function() {
 		
 		$(this).parent().toggleClass("expanded");
@@ -20,7 +18,7 @@ $(document).ready(function() {
 			
 			window.newIcon = $(this).parent().attr("change-icon");
 			
-			if(window.isChanged === false) {
+			if($(this).parent().hasClass("expanded")) {
 				
 				window.currentIcon = $(this).parent().find("i").attr("class").split(" ")[1];
 			
