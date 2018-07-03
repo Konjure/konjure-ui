@@ -206,25 +206,25 @@
 /* Gridlines Attribute */
 
 .grid.gridlines {
-	-webkit-box-shadow: inset 0px 0px 0px 0.5px var(--red);
-	-moz-box-shadow: inset 0px 0px 0px 0.5px var(--red);
-	box-shadow: inset 0px 0px 0px 0.5px var(--red);
+	-webkit-box-shadow: inset 0px 0px 0px 1px var(--red);
+	-moz-box-shadow: inset 0px 0px 0px 1px var(--red);
+	box-shadow: inset 0px 0px 0px 1px var(--red);
 }
 
 .grid.gridlines [class^="column"] {
-	-webkit-box-shadow: inset 0px 0px 0px 0.5px var(--green);
-	-moz-box-shadow: inset 0px 0px 0px 0.5px var(--green);
-	box-shadow: inset 0px 0px 0px 0.5px var(--green);
+	-webkit-box-shadow: inset 0px 0px 0px 1px var(--green);
+	-moz-box-shadow: inset 0px 0px 0px 1px var(--green);
+	box-shadow: inset 0px 0px 0px 1px var(--green);
 }
 
 .grid.gridlines [class^="row"] {
-	-webkit-box-shadow: inset 0px 0px 0px 0.5px var(--yellow);
-	-moz-box-shadow: inset 0px 0px 0px 0.5px var(--yellow);
-	box-shadow: inset 0px 0px 0px 0.5px var(--yellow);
+	-webkit-box-shadow: inset 0px 0px 0px 1px var(--yellow);
+	-moz-box-shadow: inset 0px 0px 0px 1px var(--yellow);
+	box-shadow: inset 0px 0px 0px 1px var(--yellow);
 }
 
 .grid.gridlines [class^="cell"] {
-	-webkit-box-shadow: inset 0px 0px 0px 0.5px var(--blue);
-	-moz-box-shadow: inset 0px 0px 0px 0.5px var(--blue);
-	box-shadow: inset 0px 0px 0px 0.5px var(--blue);
+	-webkit-box-shadow: inset 0px 0px 0px 1px var(--blue);
+	-moz-box-shadow: inset 0px 0px 0px 1px var(--blue);
+	box-shadow: inset 0px 0px 0px 1px var(--blue);
 }
