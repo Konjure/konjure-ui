@@ -8,30 +8,28 @@
 
 $(document).ready(function() {
 
-	window.isChanged = false;
-
-	$(".expander").click(function() {
+	$(".expander > h1, .expander > h2, .expander > h3, .expander > h4, .expander > h5, .expander > h6, .expander > p, .expander > i").click(function() {
 		
-		$(this).toggleClass("expanded");
+		$(this).parent().toggleClass("expanded");
 		
 		// Icon changing
 
-		if($(this).is("[change-icon]")) {
+		if($(this).parent().is("[change-icon]")) {
 			
-			window.newIcon = $(this).attr("change-icon");
+			window.newIcon = $(this).parent().attr("change-icon");
 			
-			if(window.isChanged === false) {
+			if($(this).parent().hasClass("expanded")) {
 				
-				window.currentIcon = $(this).find("i").attr("class").split(" ")[1];
+				window.currentIcon = $(this).parent().find("i").attr("class").split(" ")[1];
 			
-				$(this).find("i").removeClass(window.currentIcon);
-				$(this).find("i").addClass(window.newIcon);
+				$(this).parent().find("i").removeClass(window.currentIcon);
+				$(this).parent().find("i").addClass(window.newIcon);
 				window.isChanged = true;
 				
 			} else {
 				
-				$(this).find("i").removeClass(window.newIcon);
-				$(this).find("i").addClass(window.currentIcon);
+				$(this).parent().find("i").removeClass(window.newIcon);
+				$(this).parent().find("i").addClass(window.currentIcon);
 				window.isChanged = false;
 				
 			}

@@ -11,28 +11,18 @@ button,
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
-	display: inline-block;
 	position: relative;
+	display: table;
 	background-color: var(--detail-color);
-	margin-top: var(--content-margin);
-	margin-bottom: var(--content-margin);
-	padding: var(--button-padding);
 	font-size: var(--button-font-size);
 	color: var(--lightest-color);
 	text-align: center;
-	letter-spacing: 1px;
+	margin-bottom: var(--content-margin);
+	padding: var(--button-padding);
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	overflow: hidden;
-}
-
-.button:first-child,
-button:first-child,
-input[type="button"]:first-child,
-input[type="submit"]:first-child,
-input[type="reset"]:first-child {
-	margin-top: 0;
 }
 
 .button:last-child,
@@ -79,12 +69,7 @@ input.outline {
 	border: var(--content-border-thickness) solid var(--detail-color);
 }
 
-.color:hover {
-	color: var(--darker-color);
-	border-color: var(--darker-color);
-}
-
-.material {
+.materialEffect {
 	display: block; 
 	position: absolute;
 	background-color: rgba(255,255,255,0.25);
@@ -96,7 +81,7 @@ input.outline {
 	transform: scale(0);
 }
 
-.material.animate {
+.materialEffect.animate {
 	-webkit-animation: material 0.75s linear;
 	animation: material 0.75s linear;
 }

@@ -8,27 +8,27 @@
 
 $(document).ready(function() {
 
-	var materialInk, d, x, y;
+	var materialEffect, d, x, y;
 
-	$(".button.material").click(function(e){
+	$(".material").click(function(e){
 		
-		if($(this).find(".materialInk").length == 0)
+		if($(this).find(".materialEffect").length == 0)
 			
-			$(this).prepend("<span class='materialInk'></span>");
-			materialInk = $(this).find(".materialInk");
-			materialInk.removeClass("animate");
+			$(this).prepend("<span class='materialEffect'></span>");
+			materialEffect = $(this).find(".materialEffect");
+			materialEffect.removeClass("animate");
 
-		if(!materialInk.height() && !materialInk.width()) {
+		if(!materialEffect.height() && !materialEffect.width()) {
 			
 			d = Math.max($(this).outerWidth(), $(this).outerHeight());
-			materialInk.css({height: d, width: d});
+			materialEffect.css({height: d, width: d});
 			
 		}
 
-		x = e.pageX - $(this).offset().left - materialInk.width() / 2;
-		y = e.pageY - $(this).offset().top - materialInk.height() / 2;
+		x = e.pageX - $(this).offset().left - materialEffect.width() / 2;
+		y = e.pageY - $(this).offset().top - materialEffect.height() / 2;
 		
-		materialInk.css({top: y+'px', left: x+'px'}).addClass("animate");
+		materialEffect.css({top: y+'px', left: x+'px'}).addClass("animate");
 		
 	});
 

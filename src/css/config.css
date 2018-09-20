@@ -53,7 +53,7 @@
 	--small-button-padding: 4px 8px 4px 8px;
 	--button-font-size: 16px;
 	--button-padding: 5px 10px 5px 10px;
-	--large-button-font-size: 24px;
+	--large-button-font-size: 19px;
 	--large-button-padding: 6px 12px 6px 12px;
 	
 	/* Separators */
@@ -75,6 +75,7 @@
 	--darken-value: 80%;
 	--grow-value: 1.2;
 	--shrink-value: 0.8;
+	--rise-value: -1px;
 	
 	/* Progress Bars */
 	

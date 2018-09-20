@@ -30,6 +30,17 @@
 	transform: scale(var(--shrink-value));
 }
 
+.rise:hover {
+	-ms-transform: translateY(var(--rise-value));
+	-webkit-transform: translateY(var(--rise-value));
+	transform: translateY(var(--rise-value));
+}
+
 .underline:hover {
 	text-decoration: underline;
+}
+
+.color:hover {
+	color: var(--darker-color);
+	border-color: var(--darker-color);
 }
