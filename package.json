@@ -1,6 +1,6 @@
 {
   "name": "konjure-ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Konjure website and application JS/CSS files",
   "scripts": {
     "buildDev": "node ./lib/build.js dev",
