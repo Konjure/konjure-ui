@@ -1,0 +1,26 @@
+{
+  "name": "konjure-ui",
+  "version": "0.1.0",
+  "description": "Konjure website and application JS/CSS files",
+  "scripts": {
+    "buildDev": "node ./lib/build.js dev",
+    "buildProd": "node ./lib/build.js prod true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Konjure/konjure-ui.git"
+  },
+  "author": "Konjure LLC",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Konjure/konjure-ui/issues"
+  },
+  "homepage": "https://github.com/Konjure/konjure-ui#readme",
+  "dependencies": {
+    "aws-sdk": "^2.318.0"
+  },
+  "devDependencies": {
+    "node-minify": "^3.4.0",
+    "mime-types": "^2.1.20"
+  }
+}
