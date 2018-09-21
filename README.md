@@ -1,9 +1,5 @@
 # Konjure-UI
 
-<p align="center">
-  Website builder JS/CSS library used for building seamless web applications.
-</p>
-
 <div align="center">
 <img src="https://forthebadge.com/images/badges/built-with-love.svg" />
 <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" />
@@ -11,7 +7,7 @@
 </div>
 
 <div align="center">
-  <img src="http://ec2-34-205-33-83.compute-1.amazonaws.com:8080/job/Konjure-UI/badge/icon" />
+[![Build Status](http://ec2-34-205-33-83.compute-1.amazonaws.com:8080/job/Konjure-UI/badge/icon)](http://ec2-34-205-33-83.compute-1.amazonaws.com:8080/job/Konjure-UI/)
   <img src="https://david-dm.org/konjure/konjure-ui/status.svg" />
 </div>
 
