@@ -7,7 +7,7 @@
 </div>
 
 <div align="center">
-[![Build Status](http://ec2-34-205-33-83.compute-1.amazonaws.com:8080/job/Konjure-UI/badge/icon)](http://ec2-34-205-33-83.compute-1.amazonaws.com:8080/job/Konjure-UI/)
+<a href='http://ec2-34-205-33-83.compute-1.amazonaws.com:8080/job/Konjure-UI/'><img src='http://ec2-34-205-33-83.compute-1.amazonaws.com:8080/job/Konjure-UI/badge/icon'></a>
   <img src="https://david-dm.org/konjure/konjure-ui/status.svg" />
 </div>
 
