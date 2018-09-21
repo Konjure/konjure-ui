@@ -7,7 +7,7 @@
 </div>
 
 <div align="center">
-<a href='http://ec2-34-205-33-83.compute-1.amazonaws.com:8080/job/Konjure-UI/'><img src='http://ec2-34-205-33-83.compute-1.amazonaws.com:8080/job/Konjure-UI/badge/icon'></a>
+  <img src="http://ec2-34-205-33-83.compute-1.amazonaws.com:8080/buildStatus/icon?job=Konjure-UI&style=plastic" />
   <img src="https://david-dm.org/konjure/konjure-ui/status.svg" />
 </div>
 
